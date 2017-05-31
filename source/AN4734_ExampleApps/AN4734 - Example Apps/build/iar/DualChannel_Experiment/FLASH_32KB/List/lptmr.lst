@@ -1,0 +1,320 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.3.54009/W32 for ARM     18/Feb/2013  16:57:30 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\src\drivers\lptmr\lptmr.c                       #
+#    Command line =  "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\src\drivers\lptmr\lptmr.c" -D IAR -D FRDM -D    #
+#                    EX2 -lCN "D:\Profiles\B38350\My Documents\App            #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\" -lB "D:\Profiles\B38350\My Documents\App             #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\" -o "D:\Profiles\B38350\My Documents\App              #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \" --no_cse --no_unroll --no_inline --no_code_motion     #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M0+ -e --fpu=None           #
+#                    --dlib_config "C:\Program Files\IAR Systems\Embedded     #
+#                    Workbench 6.4\arm\INC\c\DLib_Config_Normal.h" -I         #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\p #
+#                    rojects\DualChannel_Experiment\" -I                      #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    ommon\" -I "D:\Profiles\B38350\My Documents\App          #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    pu\" -I "D:\Profiles\B38350\My Documents\App             #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    pu\headers\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\llwu\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\adc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\lptmr\" -I "D:\Profiles\B38350\My Documents\App   #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\mcg\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\pmc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\rcm\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\rtc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\smc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\uart\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\wdog\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\uart\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\p #
+#                    latforms\" -I "D:\Profiles\B38350\My Documents\App       #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\" -Ol       #
+#                    --use_c++_inline                                         #
+#    List file    =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\lptmr.lst                                              #
+#    Object file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \lptmr.o                                                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\Profiles\B38350\My Documents\App Notes\Kinetis\L Series\CMP pin sampling\Example Projects\src\drivers\lptmr\lptmr.c
+      1          /*
+      2           * File:        lptmr.c
+      3           * Purpose:     Provide common low power timer functions
+      4           *
+      5           * Notes:       Right now only function provided is used
+      6           *              to generate a delay in ms. This driver
+      7           *              could be expanded to include more functions
+      8           *              in the future.
+      9           *
+     10           */
+     11          
+     12          
+     13          #include "common.h"
+     14          #include "lptmr.h"
+     15          
+     16          
+     17          extern int re_init_clk;
+     18          extern int clock_freq_hz;
+     19          
+     20          /********************************************************************/
+     21          /*
+     22           * Initialize the low power time to provide a delay measured in ms.
+     23           *
+     24           *
+     25           * Parameters:
+     26           *  count_val   number of ms to delay
+     27           *
+     28           * Returns:
+     29           * None
+     30           */
+
+   \                                 In section .text, align 2, keep-with-next
+     31          void time_delay_ms(uint32 count_val)
+     32          {
+   \                     time_delay_ms:
+   \   00000000   0xB500             PUSH     {LR}
+     33            /* Make sure the clock to the LPTMR is enabled */
+     34            SIM_SCGC5|=SIM_SCGC5_LPTMR_MASK;
+   \   00000002   0x....             LDR      R1,??DataTable2  ;; 0x40048038
+   \   00000004   0x6809             LDR      R1,[R1, #+0]
+   \   00000006   0x2201             MOVS     R2,#+1
+   \   00000008   0x430A             ORRS     R2,R2,R1
+   \   0000000A   0x....             LDR      R1,??DataTable2  ;; 0x40048038
+   \   0000000C   0x600A             STR      R2,[R1, #+0]
+     35          
+     36            /* Reset LPTMR settings */
+     37            LPTMR0_CSR=0;
+   \   0000000E   0x....             LDR      R1,??DataTable2_1  ;; 0x40040000
+   \   00000010   0x2200             MOVS     R2,#+0
+   \   00000012   0x600A             STR      R2,[R1, #+0]
+     38          
+     39            /* Set the compare value to the number of ms to delay */
+     40            LPTMR0_CMR = count_val;
+   \   00000014   0x....             LDR      R1,??DataTable2_2  ;; 0x40040008
+   \   00000016   0x6008             STR      R0,[R1, #+0]
+     41          
+     42            /* Set up LPTMR to use 1kHz LPO with no prescaler as its clock source */
+     43            LPTMR0_PSR = LPTMR_PSR_PCS(1)|LPTMR_PSR_PBYP_MASK;
+   \   00000018   0x....             LDR      R0,??DataTable2_3  ;; 0x40040004
+   \   0000001A   0x2105             MOVS     R1,#+5
+   \   0000001C   0x6001             STR      R1,[R0, #+0]
+     44          
+     45            /* Start the timer */
+     46            LPTMR0_CSR |= LPTMR_CSR_TEN_MASK;
+   \   0000001E   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000020   0x6800             LDR      R0,[R0, #+0]
+   \   00000022   0x2101             MOVS     R1,#+1
+   \   00000024   0x4301             ORRS     R1,R1,R0
+   \   00000026   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000028   0x6001             STR      R1,[R0, #+0]
+     47          
+     48            /* Wait for counter to reach compare value */
+     49            while (!(LPTMR0_CSR & LPTMR_CSR_TCF_MASK));
+   \                     ??time_delay_ms_0:
+   \   0000002A   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   0000002C   0x6800             LDR      R0,[R0, #+0]
+   \   0000002E   0x0600             LSLS     R0,R0,#+24
+   \   00000030   0xD5FB             BPL      ??time_delay_ms_0
+     50          
+     51            /* Disable counter and Clear Timer Compare Flag */
+     52            LPTMR0_CSR &= ~LPTMR_CSR_TEN_MASK;
+   \   00000032   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000034   0x6800             LDR      R0,[R0, #+0]
+   \   00000036   0x2101             MOVS     R1,#+1
+   \   00000038   0x4388             BICS     R0,R0,R1
+   \   0000003A   0x....             LDR      R1,??DataTable2_1  ;; 0x40040000
+   \   0000003C   0x6008             STR      R0,[R1, #+0]
+     53          
+     54            return;
+   \   0000003E   0xBD00             POP      {PC}             ;; return
+     55          }
+     56          
+
+   \                                 In section .text, align 2, keep-with-next
+     57          void lptmr_isr(void)
+     58          {
+     59          
+     60            // printf("\n****LPT ISR entered*****\r\n");
+     61            // write 1 to TCF to clear the LPT timer compare flag
+     62            LPTMR0_CSR |=  LPTMR_CSR_TCF_MASK;   
+   \                     lptmr_isr:
+   \   00000000   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0x2180             MOVS     R1,#+128
+   \   00000006   0x4301             ORRS     R1,R1,R0
+   \   00000008   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   0000000A   0x6001             STR      R1,[R0, #+0]
+     63          }
+   \   0000000C   0x4770             BX       LR               ;; return
+     64          /*******************************************************************************
+     65          *
+     66          *   PROCEDURE NAME:
+     67          *       lptmr_init -
+     68          *
+     69          *******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     70          void lptmr_init(int count, int clock_source)
+     71          {
+   \                     lptmr_init:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     72              SIM_SCGC5 |= SIM_SCGC5_LPTMR_MASK;
+   \   00000002   0x....             LDR      R2,??DataTable2  ;; 0x40048038
+   \   00000004   0x6812             LDR      R2,[R2, #+0]
+   \   00000006   0x2301             MOVS     R3,#+1
+   \   00000008   0x4313             ORRS     R3,R3,R2
+   \   0000000A   0x....             LDR      R2,??DataTable2  ;; 0x40048038
+   \   0000000C   0x6013             STR      R3,[R2, #+0]
+     73              // disable LPTMR
+     74              LPTMR0_CSR &= ~LPTMR_CSR_TEN_MASK; 
+   \   0000000E   0x....             LDR      R2,??DataTable2_1  ;; 0x40040000
+   \   00000010   0x6812             LDR      R2,[R2, #+0]
+   \   00000012   0x2301             MOVS     R3,#+1
+   \   00000014   0x439A             BICS     R2,R2,R3
+   \   00000016   0x....             LDR      R3,??DataTable2_1  ;; 0x40040000
+   \   00000018   0x601A             STR      R2,[R3, #+0]
+     75              // select LPO for RTC and LPTMR
+     76              LPTMR0_PSR = ( LPTMR_PSR_PRESCALE(0) // 0000 is div 2
+     77                           | LPTMR_PSR_PBYP_MASK  // LPO feeds directly to LPT
+     78                           | LPTMR_PSR_PCS(clock_source)) ; // use the choice of clock
+   \   0000001A   0x0789             LSLS     R1,R1,#+30       ;; ZeroExtS R1,R1,#+30,#+30
+   \   0000001C   0x0F89             LSRS     R1,R1,#+30
+   \   0000001E   0x2204             MOVS     R2,#+4
+   \   00000020   0x430A             ORRS     R2,R2,R1
+   \   00000022   0x....             LDR      R1,??DataTable2_3  ;; 0x40040004
+   \   00000024   0x600A             STR      R2,[R1, #+0]
+     79                        
+     80              LPTMR0_CMR = LPTMR_CMR_COMPARE(count);  //Set compare value
+   \   00000026   0xB280             UXTH     R0,R0
+   \   00000028   0x....             LDR      R1,??DataTable2_2  ;; 0x40040008
+   \   0000002A   0x6008             STR      R0,[R1, #+0]
+     81          	// clear flag
+     82          	LPTMR0_CSR |=  LPTMR_CSR_TCF_MASK; 
+   \   0000002C   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   0000002E   0x6800             LDR      R0,[R0, #+0]
+   \   00000030   0x2180             MOVS     R1,#+128
+   \   00000032   0x4301             ORRS     R1,R1,R0
+   \   00000034   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000036   0x6001             STR      R1,[R0, #+0]
+     83          	
+     84              LPTMR0_CSR =(  LPTMR_CSR_TCF_MASK   // Clear any pending interrupt
+     85                           | LPTMR_CSR_TIE_MASK   // LPT interrupt enabled
+     86                           );
+   \   00000038   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   0000003A   0x21C0             MOVS     R1,#+192
+   \   0000003C   0x6001             STR      R1,[R0, #+0]
+     87          	
+     88              LPTMR0_CSR |= LPTMR_CSR_TEN_MASK;   //Turn on LPT and start counting
+   \   0000003E   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000040   0x6800             LDR      R0,[R0, #+0]
+   \   00000042   0x2101             MOVS     R1,#+1
+   \   00000044   0x4301             ORRS     R1,R1,R0
+   \   00000046   0x....             LDR      R0,??DataTable2_1  ;; 0x40040000
+   \   00000048   0x6001             STR      R1,[R0, #+0]
+     89              
+     90              enable_irq(28);
+   \   0000004A   0x201C             MOVS     R0,#+28
+   \   0000004C   0x.... 0x....      BL       enable_irq
+     91          
+     92          }
+   \   00000050   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x40048038         DC32     0x40048038
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x40040000         DC32     0x40040000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x40040008         DC32     0x40040008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x40040004         DC32     0x40040004
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        8  lptmr_init
+             8 -> enable_irq
+        0  lptmr_isr
+        4  time_delay_ms
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+      82  lptmr_init
+      14  lptmr_isr
+      64  time_delay_ms
+
+ 
+ 176 bytes in section .text
+ 
+ 176 bytes of CODE memory
+
+Errors: none
+Warnings: none

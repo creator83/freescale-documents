@@ -1,0 +1,939 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.30.1.53127/W32 for ARM              23/Mar/2012  08:32:46 #
+# Copyright 2007-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxx #
+#                    xx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Ex #
+#                    e\K60_DMA_Audio_MQX.out                                  #
+#    Map file     =  D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxx #
+#                    xx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Li #
+#                    st\K60_DMA_Audio_MQX.map                                 #
+#    Command line =  D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxx #
+#                    xx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Ob #
+#                    j\AudioCard.o D:\ccwork\b01800_dev_view\IMMAPPS\Applicat #
+#                    ion_Notes\ANxxxx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audi #
+#                    o_MQX\Debug\Obj\audio_dma.o                              #
+#                    D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxx #
+#                    xx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Ob #
+#                    j\i2s.o D:\ccwork\b01800_dev_view\IMMAPPS\Application_No #
+#                    tes\ANxxxx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\ #
+#                    Debug\Obj\main_task.o D:\ccwork\b01800_dev_view\IMMAPPS\ #
+#                    Application_Notes\ANxxxx_Kitetis_Audio_Galda\AN4369_K60_ #
+#                    DMA_Audio_MQX\Debug\Obj\sgtl5000.o -o                    #
+#                    D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxx #
+#                    xx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Ex #
+#                    e\K60_DMA_Audio_MQX.out --map                            #
+#                    D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxx #
+#                    xx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Li #
+#                    st\K60_DMA_Audio_MQX.map --config                        #
+#                    C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\in #
+#                    tflash.icf --semihosting C:\Freescale\Freescale_MQX_3.8\ #
+#                    lib\twrk60n512.iar\bsp\bsp_twrk60n512_d.a                #
+#                    C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\ps #
+#                    p_twrk60n512_d.a C:\Freescale\Freescale_MQX_3.8\lib\twrk #
+#                    60n512.iar\mfs\mfs_twrk60n512_d.a --entry                #
+#                    __iar_program_start --vfe                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                   = *
+__SystemLibrary             = DLib
+__dlib_jmp_buf_num_elements = 8
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec, block CFMPROTROM };
+"P1":  place in [from 0x00000000 to 0x0007ffff] {
+          first block TEXTSECTION, ro, last block FLASHX_POOL };
+"P2":  place in [from 0x1fff0000 to 0x2000fff0] { rw, last block KERNEL_DATA };
+
+  Section            Kind        Address     Size  Object
+  -------            ----        -------     ----  ------
+"A1":                                       0x414
+  .intvec            const    0x00000000    0x400  vectors.o [3]
+  CFMPROTROM                  0x00000400     0x14  <Block>
+    .cfmconfig       const    0x00000400     0x10  vectors.o [3]
+    .cfmconfig       const    0x00000410      0x0  vectors.o [3]
+    CFMPROTROM       const    0x00000410      0x4  <Block tail>
+                            - 0x00000414    0x414
+
+"P1":                                     0x29be4
+  TEXTSECTION                 0x00000420  0x29534  <Block>
+    .text            ro code  0x00000420     0x26  iodebug_asm.o [3]
+    .text            ro code  0x00000450     0x4c  cortex_boot.o [5]
+    .text            ro code  0x0000049c      0xc  cstartup_M.o [6]
+    .text            ro code  0x000004a8     0x16  cmain.o [6]
+    .text            ro code  0x000004be      0xe  iar.o [3]
+    .text            ro code  0x000004cc     0x2c  data_init3.o [6]
+    .text            ro code  0x000004f8     0x14  mqx_main.o [3]
+    .text            ro code  0x0000050c      0x4  exit.o [4]
+    .text            ro code  0x00000510     0xdc  init_hw.o [3]
+    .text            ro code  0x000005ec    0x17c  mqx.o [5]
+    .text            ro code  0x00000768      0xa  cexit.o [6]
+    .text            ro code  0x00000772     0x22  zero_init3.o [6]
+    .text            ro code  0x00000794    0x4e4  bsp_cm.o [3]
+    .text            ro code  0x00000c78    0x3e8  init_gpio.o [3]
+    .text            ro code  0x00001060     0xf8  mem_zero.o [5]
+    .text            ro code  0x00001158     0xdc  mqxiinit.o [5]
+    .text            ro code  0x00001234     0x28  lwm_init.o [5]
+    .text            ro code  0x0000125c     0x20  int_disa.o [5]
+    .text            ro code  0x0000127c     0x14  lwm_gsys.o [5]
+    .text            ro code  0x00001290      0xa  lwm_size.o [5]
+    .text            ro code  0x0000129a     0x2e  copy_init3.o [6]
+    .text            ro code  0x000012c8    0x184  ta_init.o [5]
+    .text            ro code  0x0000144c     0xa4  sc_irdyq.o [5]
+    .text            ro code  0x000014f0     0x58  lws_crea.o [5]
+    .text            ro code  0x00001548    0x1e8  init_bsp.o [3]
+    .text            ro code  0x00001730     0x14  exit.o [7]
+    .text            ro code  0x00001744      0x8  cm.o [3]
+    .text            ro code  0x0000174c      0xc  qu_init.o [5]
+    .text            ro code  0x00001758     0x68  lwm_crep.o [5]
+    .text            ro code  0x000017c0    0x1c8  lwm_alli.o [5]
+    .text            ro code  0x00001988     0xb4  td_alloc.o [5]
+    .text            ro code  0x00001a3c     0x30  td_serr.o [5]
+    .text            ro code  0x00001a6c     0x54  stack_bu.o [5]
+    .text            ro code  0x00001ac0      0x8  lwm_xfri.o [5]
+    .text            ro code  0x00001ac8     0x3a  ABImemset48.o [6]
+    .text            ro code  0x00001b04     0x14  lwm_allz.o [5]
+    .text            ro code  0x00001b18     0x28  int_ena.o [5]
+    .text            ro code  0x00001b40     0x3c  qu_enq.o [5]
+    .text            ro code  0x00001b7c      0xc  mqx_scpu.o [5]
+    .text            ro code  0x00001b88     0x30  lwm_allo.o [5]
+    .text            ro code  0x00001bb8     0x12  psp_iinit.o [5]
+    .text            ro code  0x00001bcc     0x10  int_vtab.o [5]
+    .text            ro code  0x00001bdc     0x10  ti_setv.o [5]
+    .text            ro code  0x00001bec     0x90  int_iisr.o [5]
+    .text            ro code  0x00001c7c     0x10  ti_sett.o [5]
+    .text            ro code  0x00001c8c     0x10  ti_shwtt.o [5]
+    .text            ro code  0x00001c9c     0x14  ti_shwtf.o [5]
+    .text            ro code  0x00001cb0     0x14  kinetis_mpu.o [5]
+    .text            ro code  0x00001cc4     0x14  io_init.o [5]
+    .text            ro code  0x00001cd8    0x2d0  krtc.o [3]
+    .text            ro code  0x00001fa8    0x362  serl_pol_kuart.o [3]
+    .text            ro code  0x0000230c    0x900  i2c_pol_ki2c.o [3]
+    .text            ro code  0x00002c0c    0x5b0  i2c_int_ki2c.o [3]
+    .text            ro code  0x000031bc    0x8ac  spi_pol_dspi.o [3]
+    .text            ro code  0x00003a68    0x1c0  io_gpio.o [3]
+    .text            ro code  0x00003c28    0x4ee  adc.o [3]
+    .text            ro code  0x00004118    0xad8  esdhc.o [3]
+    .text            ro code  0x00004bf0    0x314  iodebug.o [3]
+    .text            ro code  0x00004f04     0x2c  io_sinit.o [3]
+    .text            ro code  0x00004f30     0xd0  ti_krnl.o [5]
+    .text            ro code  0x00005000     0xdc  lwm_free.o [5]
+    .text            ro code  0x000050dc     0x38  qu_insrt.o [5]
+    .text            ro code  0x00005114     0x74  int_init.o [5]
+    .text            ro code  0x00005188     0x10  int_inst.o [5]
+    .text            ro code  0x00005198     0x18  td_gerr.o [5]
+    .text            ro code  0x000051b0     0xb0  cortex.o [5]
+    .text            ro code  0x00005260     0xd0  ti_to.o [5]
+    .text            ro code  0x00005330    0x150  ti_from.o [5]
+    .text            ro code  0x00005480     0x48  ti_kset.o [5]
+    .text            ro code  0x000054c8     0x18  ti_get.o [5]
+    .text            ro code  0x000054e0    0x3f2  serl_pol.o [3]
+    .text            ro code  0x000058d4     0x44  serl_mk60.o [3]
+    .text            ro code  0x00005918     0x14  lwm_zsys.o [5]
+    .text            ro code  0x0000592c    0x13e  i2c_pol.o [3]
+    .text            ro code  0x00005a6c     0x2e  i2c_mk60.o [3]
+    .text            ro code  0x00005a9c    0x13a  i2c_int.o [3]
+    .text            ro code  0x00005bd8     0x5c  int_gdat.o [5]
+    .text            ro code  0x00005c34    0x158  spi_pol.o [3]
+    .text            ro code  0x00005d8c     0x20  spi_mk60_dspi.o [3]
+    .text            ro code  0x00005dac    0x7d8  io_gpio_kgpio.o [3]
+    .text            ro code  0x00006584     0x1c  io_inst.o [5]
+    .text            ro code  0x000065a0     0x38  io_ioctl.o [5]
+    .text            ro code  0x000065d8    0x898  adc_kadc.o [3]
+    .text            ro code  0x00006e70    0x7dc  adt_kpdb.o [3]
+    .text            ro code  0x0000764c     0x42  strcmp.o [6]
+    .text            ro code  0x00007690     0x36  strlen.o [6]
+    .text            ro code  0x000076c8     0x40  ti_delay.o [5]
+    .text            ro code  0x00007708    0x118  io_instx.o [5]
+    .text            ro code  0x00007820     0x10  esdhc_mk60.o [3]
+    .text            ro code  0x00007830     0x76  ABImemcpy.o [6]
+    .text            ro code  0x000078a8     0xa4  lws_dest.o [5]
+    .text            ro code  0x0000794c     0x6c  lws_wait.o [5]
+    .text            ro code  0x000079b8     0x78  lws_post.o [5]
+    .text            ro code  0x00007a30     0x90  io_fopen.o [5]
+    .text            ro code  0x00007ac0     0x30  psp_tinm.o [5]
+    .text            ro code  0x00007af0     0x28  ti_leap.o [5]
+    .text            ro code  0x00007b18     0x26  psp_tiol.o [5]
+    .text            ro code  0x00007b40     0x3c  psp_tisu.o [5]
+    .text            ro code  0x00007b7c     0x50  ti_gett.o [5]
+    .text            ro code  0x00007bcc     0x98  psp_tkti.o [5]
+    .text            ro code  0x00007c64     0x2a  strncmp.o [4]
+    .text            ro code  0x00007c90     0x1c  adc_mk60.o [3]
+    .text            ro code  0x00007cac     0xee  I64DivMod.o [6]
+    .text            ro code  0x00007d9c     0xc8  lwe_set.o [5]
+    .text            ro code  0x00007e64     0x6c  psp_mstiq.o [5]
+    .text            ro code  0x00007ed0     0x40  psp_tiad.o [5]
+    .text            ro code  0x00007f10     0x78  ti_deli.o [5]
+    .text            ro code  0x00007f88     0x2e  qu_deq.o [5]
+    .text            ro code  0x00007fb8     0x1c  psp_seti.o [5]
+    .text            ro code  0x00007fd4     0x5c  psp_msti.o [5]
+    .text            ro code  0x00008030      0x2  I64DivZer.o [6]
+    .text            ro code  0x00008034    0x1e4  audio_dma.o [1]
+    .text            ro code  0x00008218     0xc8  ev_set.o [5]
+    .text            ro code  0x000082e0  0x20c0c  main_task.o [1]
+    .text            ro code  0x00028eec     0x18  ev_creat.o [5]
+    .text            ro code  0x00028f04     0xd4  ev_open.o [5]
+    .text            ro code  0x00028fd8     0x34  ev_all.o [5]
+    .text            ro code  0x0002900c     0x3c  ev_clear.o [5]
+    .text            ro code  0x00029048     0xac  ev_creai.o [5]
+    .text            ro code  0x000290f4     0x88  na_findi.o [5]
+    .text            ro code  0x0002917c     0xe8  ev_waiti.o [5]
+    .text            ro code  0x00029264     0xac  ev_comp.o [5]
+    .text            ro code  0x00029310     0x6c  strncpy.o [6]
+    .text            ro code  0x0002937c    0x104  na_addi.o [5]
+    .text            ro code  0x00029480     0x1a  strnlen.o [5]
+    .text            ro code  0x0002949c     0x38  ti_delun.o [5]
+    .text            ro code  0x000294d4     0x3c  ti_delfo.o [5]
+    .text            ro code  0x00029510     0x64  na_crth.o [5]
+    .text            ro code  0x00029574     0x5e  ABImemset.o [6]
+    .text            ro code  0x000295d4     0x3c  int_isr.o [5]
+    .text            ro code  0x00029610      0xe  td_serrt.o [5]
+    .text            ro code  0x00029620     0x38  idletask.o [5]
+    .text            ro code  0x00029658     0x28  ta_exit.o [5]
+    .text            ro code  0x00029680    0x1b0  ta_dest.o [5]
+    .text            ro code  0x00029830     0x54  td_get.o [5]
+    .text            ro code  0x00029884     0x6c  lwm_list.o [5]
+    .text            ro code  0x000298f0      0x2  stack_de.o [5]
+    .text            ro code  0x000298f4     0x60  ev_tdel.o [5]
+  KERNEL             ro code  0x00029960    0x218  dispatch.o [5]
+  .iar.init_table    const    0x00029b78     0x38  - Linker created -
+  .rodata            const    0x00029bb0     0x48  main_task.o [1]
+  .rodata            const    0x00029bf8     0x18  mqx.o [5]
+  .rodata            const    0x00029c10     0x28  init_adc.o [3]
+  .rodata            const    0x00029c38     0x30  init_spi.o [3]
+  .rodata            const    0x00029c68      0xc  init_esdhc.o [3]
+  .rodata            const    0x00029c74     0x28  init_i2c.o [3]
+  .rodata            const    0x00029c9c      0xc  init_iodebug.o [3]
+  .rodata            const    0x00029ca8     0x20  init_sci.o [3]
+  .rodata            const    0x00029cc8    0x290  ti_rom.o [5]
+  .rodata            const    0x00029f58     0x38  mqx_init.o [3]
+  Initializer bytes  ro data  0x00029f90     0x30  <for P2 mid-1>
+  Initializer bytes  ro data  0x00029fc0      0x4  <for KERNEL_DATA-1>
+  .rodata            const    0x00029fc4      0x0  bwt_init3c.o [6]
+  FLASHX_POOL                 0x0002a000      0x1  <Block>
+    .flashx          const    0x0002a000      0x1  vectors.o [3]
+    .flashx          const    0x0002a001      0x0  vectors.o [3]
+                            - 0x0002a001  0x29be1
+
+"P2":                                       0xca4
+  P2 mid-1                    0x1fff0000     0x30  <Init block>
+    .data            inited   0x1fff0000      0x8  mqx.o [5]
+    .data            inited   0x1fff0008     0x28  adt_kpdb.o [3]
+  .bss               zero     0x1fff0030    0xc04  audio_dma.o [1]
+  .bss               zero     0x1fff0c34      0x8  main_task.o [1]
+  .bss               zero     0x1fff0c3c      0x8  psp_mstiq.o [5]
+  .bss               zero     0x1fff0c44      0x4  io_gpio.o [3]
+  .bss               zero     0x1fff0c48     0x14  krtc.o [3]
+  .bss               zero     0x1fff0c5c     0x18  adc_kadc.o [3]
+  .bss               zero     0x1fff0c74     0x14  io_gpio_kgpio.o [3]
+  .bss               zero     0x1fff0c88     0x14  io_gpio_kgpio.o [3]
+  .bss               zero     0x1fff0c9c      0x1  bsp_cm.o [3]
+  KERNEL_DATA                 0x1fff0ca0      0x4  <Block>
+    KERNEL_DATA-1             0x1fff0ca0      0x4  <Init block>
+      .kernel_data   inited   0x1fff0ca0      0x4  kernel_data.o [3]
+                            - 0x1fff0ca4    0xca4
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xc6d:
+          0x1fff0030  0xc6d
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x30:
+          0x00029f90   0x30
+    1 destination range, total size 0x30:
+          0x1fff0000   0x30
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+          0x00029fc0    0x4
+    1 destination range, total size 0x4:
+          0x1fff0ca0    0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxxxx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Obj: [1]
+    audio_dma.o           484             3 076
+    main_task.o       134 156       72        8
+    -------------------------------------------
+    Total:            134 640       72    3 084
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+bsp_twrk60n512_d.a: [3]
+    adc.o               1 262
+    adc_kadc.o          2 200                24
+    adc_mk60.o             28
+    adt_kpdb.o          2 012       40       40
+    bsp_cm.o            1 252                 1
+    cm.o                    8
+    esdhc.o             2 776
+    esdhc_mk60.o           16
+    i2c_int.o             314
+    i2c_int_ki2c.o      1 456
+    i2c_mk60.o             46
+    i2c_pol.o             318
+    i2c_pol_ki2c.o      2 304
+    iar.o                  14
+    init_adc.o                      40
+    init_bsp.o            488
+    init_esdhc.o                    12
+    init_gpio.o         1 000
+    init_hw.o             220
+    init_i2c.o                      40
+    init_iodebug.o                  12
+    init_sci.o                      32
+    init_spi.o                      48
+    io_gpio.o             448                 4
+    io_gpio_kgpio.o     2 008                40
+    io_sinit.o             44
+    iodebug.o             788
+    iodebug_asm.o          38
+    kernel_data.o                    4        4
+    krtc.o                720                20
+    mqx_init.o                      56
+    mqx_main.o             20
+    serl_mk60.o            68
+    serl_pol.o          1 010
+    serl_pol_kuart.o      866
+    spi_mk60_dspi.o        32
+    spi_pol.o             344
+    spi_pol_dspi.o      2 220
+    vectors.o                    1 041
+    -------------------------------------------
+    Total:             24 320    1 325      133
+
+dl7M_tln.a: [4]
+    exit.o                  4
+    strncmp.o              42
+    -------------------------------------------
+    Total:                 46
+
+psp_twrk60n512_d.a: [5]
+    cortex.o              176
+    cortex_boot.o          76
+    dispatch.o            536
+    ev_all.o               52
+    ev_clear.o             60
+    ev_comp.o             172
+    ev_creai.o            172
+    ev_creat.o             24
+    ev_open.o             212
+    ev_set.o              200
+    ev_tdel.o              96
+    ev_waiti.o            232
+    idletask.o             56
+    int_disa.o             32
+    int_ena.o              40
+    int_gdat.o             92
+    int_iisr.o            144
+    int_init.o            116
+    int_inst.o             16
+    int_isr.o              60
+    int_vtab.o             16
+    io_fopen.o            144
+    io_init.o              20
+    io_inst.o              28
+    io_instx.o            280
+    io_ioctl.o             56
+    kinetis_mpu.o          20
+    lwe_set.o             200
+    lwm_alli.o            456
+    lwm_allo.o             48
+    lwm_allz.o             20
+    lwm_crep.o            104
+    lwm_free.o            220
+    lwm_gsys.o             20
+    lwm_init.o             40
+    lwm_list.o            108
+    lwm_size.o             10
+    lwm_xfri.o              8
+    lwm_zsys.o             20
+    lws_crea.o             88
+    lws_dest.o            164
+    lws_post.o            120
+    lws_wait.o            108
+    mem_zero.o            248
+    mqx.o                 380       32        8
+    mqx_scpu.o             12
+    mqxiinit.o            220
+    na_addi.o             260
+    na_crth.o             100
+    na_findi.o            136
+    psp_iinit.o            18
+    psp_msti.o             92
+    psp_mstiq.o           108                 8
+    psp_seti.o             28
+    psp_tiad.o             64
+    psp_tinm.o             48
+    psp_tiol.o             38
+    psp_tisu.o             60
+    psp_tkti.o            152
+    qu_deq.o               46
+    qu_enq.o               60
+    qu_init.o              12
+    qu_insrt.o             56
+    sc_irdyq.o            164
+    stack_bu.o             84
+    stack_de.o              2
+    strnlen.o              26
+    ta_dest.o             432
+    ta_exit.o              40
+    ta_init.o             388
+    td_alloc.o            180
+    td_gerr.o              24
+    td_get.o               84
+    td_serr.o              48
+    td_serrt.o             14
+    ti_delay.o             64
+    ti_delfo.o             60
+    ti_deli.o             120
+    ti_delun.o             56
+    ti_from.o             336
+    ti_get.o               24
+    ti_gett.o              80
+    ti_krnl.o             208
+    ti_kset.o              72
+    ti_leap.o              40
+    ti_rom.o                       656
+    ti_sett.o              16
+    ti_setv.o              16
+    ti_shwtf.o             20
+    ti_shwtt.o             16
+    ti_to.o               208
+    -------------------------------------------
+    Total:              9 822      688       16
+
+rt7M_tl.a: [6]
+    ABImemcpy.o           118
+    ABImemset.o            94
+    ABImemset48.o          58
+    I64DivMod.o           238
+    I64DivZer.o             2
+    bwt_init3c.o
+    cexit.o                10
+    cmain.o                22
+    copy_init3.o           46
+    cstartup_M.o           12
+    data_init3.o           44
+    strcmp.o               66
+    strlen.o               54
+    strncpy.o             108
+    zero_init3.o           34
+    -------------------------------------------
+    Total:                906
+
+shb_l.a: [7]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                   62                63
+    Linker created                  60
+-----------------------------------------------
+    Grand Total:      169 816    2 145    3 296
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address     Size  Type      Object
+-----                      -------     ----  ----      ------
+?main                   0x000004a9           Code  Gb  cmain.o [6]
+Audio_Silence           0x1fff0834    0x400  Data  Gb  audio_dma.o [1]
+Audio_Source_Blk_A      0x1fff0034    0x400  Data  Gb  audio_dma.o [1]
+Audio_Source_Blk_B      0x1fff0434    0x400  Data  Gb  audio_dma.o [1]
+BAUDRATE_ICR            0x00002b0c    0x100  Data  Lc  i2c_pol_ki2c.o [3]
+BAUDRATE_MULT           0x00002b00      0xc  Data  Lc  i2c_pol_ki2c.o [3]
+BAUDRATE_PRESCALER      0x00003a08     0x10  Data  Lc  spi_pol_dspi.o [3]
+BAUDRATE_SCALER         0x00003a18     0x40  Data  Lc  spi_pol_dspi.o [3]
+CFMPROTROM$$Base        0x00000400            --   Gb  - Linker created -
+CFMPROTROM$$Limit       0x00000414            --   Gb  - Linker created -
+ClearAudioBuffers       0x00008035     0x2e  Code  Gb  audio_dma.o [1]
+ClockConfigurationID    0x1fff0c9c      0x1  Data  Lc  bsp_cm.o [3]
+Cpu_SetClockConfiguration
+                        0x0000098b     0xc6  Code  Gb  bsp_cm.o [3]
+Cpu_SetMCG              0x00000795    0x1f6  Code  Lc  bsp_cm.o [3]
+DELAY_PRESCALER         0x00003a58     0x10  Data  Lc  spi_pol_dspi.o [3]
+ESDHC_COMMAND_XFERTYP   0x00004af0    0x100  Data  Lc  esdhc.o [3]
+FLASHX_POOL$$Base       0x0002a000            --   Gb  - Linker created -
+FLASHX_POOL$$Limit      0x0002a001            --   Gb  - Linker created -
+Init_Audio              0x00008063     0x1e  Code  Gb  audio_dma.o [1]
+Init_DAC                0x00008181     0x1e  Code  Gb  audio_dma.o [1]
+Init_FTM2               0x0000812b     0x36  Code  Gb  audio_dma.o [1]
+KERNEL_DATA$$Base       0x1fff0ca0            --   Gb  - Linker created -
+KERNEL_DATA$$Limit      0x1fff0ca4            --   Gb  - Linker created -
+MCGTransitionMatrix     0x00000be4     0x1c  Data  Lc  bsp_cm.o [3]
+MQX_init_struct         0x00029f60     0x30  Data  Gb  mqx_init.o [3]
+MQX_template_list       0x00029bb8     0x40  Data  Gb  main_task.o [1]
+PE_CpuClockConfigurations
+                        0x00000c00     0x78  Data  Lc  bsp_cm.o [3]
+Playing_Buff_A          0x1fff0030      0x4  Data  Gb  audio_dma.o [1]
+Region$$Table$$Base     0x00029b78            --   Gb  - Linker created -
+Region$$Table$$Limit    0x00029bb0            --   Gb  - Linker created -
+Set_Audio_Playback_Dma  0x000080ab     0x62  Code  Gb  audio_dma.o [1]
+Set_Dma_Mux             0x0000810d     0x1e  Code  Gb  audio_dma.o [1]
+Set_VREF                0x00008161     0x20  Code  Gb  audio_dma.o [1]
+Start_Audio             0x00008081     0x12  Code  Gb  audio_dma.o [1]
+Stop_Audio              0x00008093     0x18  Code  Gb  audio_dma.o [1]
+TEXTSECTION$$Base       0x00000420            --   Gb  - Linker created -
+TEXTSECTION$$Limit      0x00029954            --   Gb  - Linker created -
+__BOOT_STACK_ADDRESS {Abs}
+                        0x2000fef0            --   Gb  command line/config [2]
+__DEFAULT_INTERRUPT_STACK_SIZE {Abs}
+                        0x00000400            --   Gb  command line/config [2]
+__DEFAULT_PROCESSOR_NUMBER {Abs}
+                        0x00000001            --   Gb  command line/config [2]
+__EXTERNAL_LCD_BASE {Abs}
+                        0x60000000            --   Gb  command line/config [2]
+__EXTERNAL_LCD_DC_BASE {Abs}
+                        0x60010000            --   Gb  command line/config [2]
+__EXTERNAL_LCD_SIZE {Abs}
+                        0x0001ffff            --   Gb  command line/config [2]
+__EXTERNAL_MRAM_RAM_BASE {Abs}
+                        0x70000000            --   Gb  command line/config [2]
+__EXTERNAL_MRAM_RAM_SIZE {Abs}
+                        0x00080000            --   Gb  command line/config [2]
+__EXTERNAL_MRAM_ROM_BASE {Abs}
+                        0x70000000            --   Gb  command line/config [2]
+__EXTERNAL_MRAM_ROM_SIZE {Abs}
+                        0x00000000            --   Gb  command line/config [2]
+__FLASHX_END_ADDR {Abs}
+                        0x00080000            --   Gb  command line/config [2]
+__FLASHX_SECT_SIZE {Abs}
+                        0x00000800            --   Gb  command line/config [2]
+__FLASHX_START_ADDR     0x0002a000      0x1  Data  Gb  vectors.o [3]
+__INTERNAL_FLASH_BASE {Abs}
+                        0x00000000            --   Gb  command line/config [2]
+__INTERNAL_FLASH_SIZE {Abs}
+                        0x00080000            --   Gb  command line/config [2]
+__INTERNAL_FLEXNVM_BASE {Abs}
+                        0x00000000            --   Gb  command line/config [2]
+__INTERNAL_FLEXNVM_SIZE {Abs}
+                        0x00000000            --   Gb  command line/config [2]
+__KERNEL_DATA_END {Abs}
+                        0x2000fff0            --   Gb  command line/config [2]
+__KERNEL_DATA_START     0x1fff0ca0           Data  Gb  kernel_data.o [3]
+__VECTOR_TABLE_RAM_START {Abs}
+                        0x1fff0000            --   Gb  command line/config [2]
+__VECTOR_TABLE_ROM_START {Abs}
+                        0x00000000            --   Gb  command line/config [2]
+__aeabi_ldiv0           0x00008031           Code  Gb  I64DivZer.o [6]
+__aeabi_memcpy          0x00007831           Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy4         0x00007851           Code  Gb  ABImemcpy.o [6]
+__aeabi_memcpy8         0x00007851           Code  Gb  ABImemcpy.o [6]
+__aeabi_memset4         0x00001ac9           Code  Gb  ABImemset48.o [6]
+__aeabi_memset8         0x00001ac9           Code  Gb  ABImemset48.o [6]
+__aeabi_uldivmod        0x00007cad           Code  Gb  I64DivMod.o [6]
+__boot                  0x00000451            --   Gb  cortex_boot.o [5]
+__cmain                 0x000004a9           Code  Gb  cmain.o [6]
+__exit                  0x00001731     0x14  Code  Gb  exit.o [7]
+__get_MSP               0x00029b4d            --   Gb  dispatch.o [5]
+__get_PSP               0x00029b47            --   Gb  dispatch.o [5]
+__get_PSR               0x00029b59            --   Gb  dispatch.o [5]
+__iar_Memset4_word      0x00001ad1           Code  Gb  ABImemset48.o [6]
+__iar_Memset8_word      0x00001ad1           Code  Gb  ABImemset48.o [6]
+__iar_Memset_word       0x00029575           Code  Gb  ABImemset.o [6]
+__iar_SB                0x00029fc4           Data  Gb  bwt_init3c.o [6]
+__iar_copy_init3        0x0000129b     0x2e  Code  Gb  copy_init3.o [6]
+__iar_data_init3        0x000004cd     0x2c  Code  Gb  data_init3.o [6]
+__iar_program_start     0x0000049d           Code  Gb  cstartup_M.o [6]
+__iar_strcmp            0x0000764d           Code  Gb  strcmp.o [6]
+__iar_zero_init3        0x00000773     0x22  Code  Gb  zero_init3.o [6]
+__low_level_init        0x000004bf      0xe  Code  Gb  iar.o [3]
+__set_MSP               0x00000483            --   Gb  cortex_boot.o [5]
+__vector_table          0x00000000    0x400  Data  Gb  vectors.o [3]
+_adc_close              0x00003f2d     0xb0  Code  Gb  adc.o [3]
+_adc_hw_channel_deinit  0x00006bd5     0x4a  Code  Gb  adc_kadc.o [3]
+_adc_hw_channel_init    0x00006aef     0xe6  Code  Gb  adc_kadc.o [3]
+_adc_hw_deinit          0x00006ad5     0x1a  Code  Gb  adc_kadc.o [3]
+_adc_hw_init            0x0000692d    0x1a8  Code  Gb  adc_kadc.o [3]
+_adc_hw_install         0x00006925      0x6  Code  Gb  adc_kadc.o [3]
+_adc_hw_ioctl           0x000065d9    0x34c  Code  Gb  adc_kadc.o [3]
+_adc_ioctl              0x00004035     0xe2  Code  Gb  adc.o [3]
+_adc_open               0x00003c95    0x298  Code  Gb  adc.o [3]
+_adc_read               0x00003fdd     0x52  Code  Gb  adc.o [3]
+_adc_write              0x00004031      0x4  Code  Gb  adc.o [3]
+_adt_hw_channel_deinit  0x000072e5     0x8c  Code  Gb  adt_kpdb.o [3]
+_adt_hw_channel_init    0x000071e1    0x104  Code  Gb  adt_kpdb.o [3]
+_adt_hw_deinit          0x0000705f      0x4  Code  Gb  adt_kpdb.o [3]
+_adt_hw_init            0x00006fa9     0xb6  Code  Gb  adt_kpdb.o [3]
+_adt_hw_install         0x00006fa5      0x4  Code  Gb  adt_kpdb.o [3]
+_adt_hw_ioctl           0x00006e71    0x134  Code  Gb  adt_kpdb.o [3]
+_adt_pause              0x00007423     0x76  Code  Gb  adt_kpdb.o [3]
+_adt_process_data       0x00007599     0x6e  Code  Gb  adt_kpdb.o [3]
+_adt_resume             0x00007499     0x90  Code  Gb  adt_kpdb.o [3]
+_adt_stop               0x00007529     0x70  Code  Gb  adt_kpdb.o [3]
+_adt_trigger            0x00007371     0xb2  Code  Gb  adt_kpdb.o [3]
+_bsp_adc1_init          0x00029c20     0x18  Data  Gb  init_adc.o [3]
+_bsp_adc_channel_io_init
+                        0x00000e39     0xa2  Code  Gb  init_gpio.o [3]
+_bsp_adc_io_init        0x00000e11     0x28  Code  Gb  init_gpio.o [3]
+_bsp_dspi2_init         0x00029c38     0x30  Data  Gb  init_spi.o [3]
+_bsp_dspi_io_init       0x00000ee9     0x60  Code  Gb  init_gpio.o [3]
+_bsp_enable_card        0x00001555    0x12a  Code  Gb  init_bsp.o [3]
+_bsp_esdhc0_init        0x00029c68      0xc  Data  Gb  init_esdhc.o [3]
+_bsp_esdhc_io_init      0x00000f49     0x2e  Code  Gb  init_gpio.o [3]
+_bsp_get_adc_base_address
+                        0x00007c91     0x12  Code  Gb  adc_mk60.o [3]
+_bsp_get_clock          0x00000b59     0x1e  Code  Gb  bsp_cm.o [3]
+_bsp_get_clock_configuration
+                        0x00000b53      0x6  Code  Gb  bsp_cm.o [3]
+_bsp_get_dspi_base_address
+                        0x00005d8d     0x12  Code  Gb  spi_mk60_dspi.o [3]
+_bsp_get_esdhc_base_address
+                        0x00007821      0xa  Code  Gb  esdhc_mk60.o [3]
+_bsp_get_hwticks        0x00001685     0x2e  Code  Gb  init_bsp.o [3]
+_bsp_get_i2c_base_address
+                        0x00005a6d     0x12  Code  Gb  i2c_mk60.o [3]
+_bsp_get_i2c_vector     0x00005a89     0x12  Code  Gb  i2c_mk60.o [3]
+_bsp_get_serial_base_address
+                        0x000058d5     0x44  Code  Gb  serl_mk60.o [3]
+_bsp_gpio_io_init       0x00000fb7      0xe  Code  Gb  init_gpio.o [3]
+_bsp_i2c0_init          0x00029c74     0x14  Data  Gb  init_i2c.o [3]
+_bsp_i2c1_init          0x00029c88     0x14  Data  Gb  init_i2c.o [3]
+_bsp_i2c_io_init        0x00000f77     0x40  Code  Gb  init_gpio.o [3]
+_bsp_initialize_hardware
+                        0x00000a51     0xe6  Code  Gb  bsp_cm.o [3]
+_bsp_iodebug_init       0x00029c9c      0xc  Data  Gb  init_iodebug.o [3]
+_bsp_osc_autotrim       0x00000b77     0x46  Code  Gb  bsp_cm.o [3]
+_bsp_pdb_init           0x00029c10     0x10  Data  Gb  init_adc.o [3]
+_bsp_rtc_io_init        0x00000edb      0xe  Code  Gb  init_gpio.o [3]
+_bsp_sci3_init          0x00029ca8     0x20  Data  Gb  init_sci.o [3]
+_bsp_serial_io_init     0x00000c79    0x198  Code  Gb  init_gpio.o [3]
+_bsp_serial_rts_init    0x00000fc5     0x1a  Code  Gb  init_gpio.o [3]
+_bsp_set_clock_configuration
+                        0x00000b37     0x1c  Code  Gb  bsp_cm.o [3]
+_bsp_systick            0x00001681      0x4  Code  Gb  init_bsp.o [3]
+_bsp_watchdog_disable   0x00000511     0x1a  Code  Gb  init_hw.o [3]
+_call_main              0x000004b5           Code  Gb  cmain.o [6]
+_cfm                    0x00000400     0x10  Data  Gb  vectors.o [3]
+_cm_get_clock           0x00001749      0x4  Code  Gb  cm.o [3]
+_cm_get_clock_configuration
+                        0x00001745      0x4  Code  Gb  cm.o [3]
+_cortex_int_disable     0x00005237     0x20  Code  Gb  cortex.o [5]
+_cortex_int_enable      0x00005217     0x20  Code  Gb  cortex.o [5]
+_cortex_int_init        0x000051b1     0x66  Code  Gb  cortex.o [5]
+_date_to_sec            0x00001e4d     0xd4  Code  Lc  krtc.o [3]
+_dspi_find_baudrate     0x000031bd     0xd8  Code  Lc  spi_pol_dspi.o [3]
+_dspi_polled_deinit     0x00003441     0x66  Code  Lc  spi_pol_dspi.o [3]
+_dspi_polled_init       0x000032bd    0x180  Code  Gb  spi_pol_dspi.o [3]
+_dspi_polled_install    0x00003295     0x26  Code  Gb  spi_pol_dspi.o [3]
+_dspi_polled_ioctl      0x000034a9    0x3bc  Code  Gb  spi_pol_dspi.o [3]
+_dspi_polled_rx         0x00003939     0x7c  Code  Lc  spi_pol_dspi.o [3]
+_dspi_polled_tx         0x000039b5     0x52  Code  Lc  spi_pol_dspi.o [3]
+_dspi_polled_tx_rx      0x00003865     0xd2  Code  Lc  spi_pol_dspi.o [3]
+_esdhc_close            0x00004469     0x5c  Code  Gb  esdhc.o [3]
+_esdhc_init             0x000041a3     0x9c  Code  Lc  esdhc.o [3]
+_esdhc_install          0x0000434b     0x72  Code  Gb  esdhc.o [3]
+_esdhc_ioctl            0x000044c5    0x4dc  Code  Gb  esdhc.o [3]
+_esdhc_open             0x000043e9     0x7e  Code  Gb  esdhc.o [3]
+_esdhc_read             0x000049b9     0xa6  Code  Gb  esdhc.o [3]
+_esdhc_send_command     0x00004241    0x10a  Code  Lc  esdhc.o [3]
+_esdhc_set_baudrate     0x00004119     0x8a  Code  Lc  esdhc.o [3]
+_esdhc_uninstall        0x000043bd     0x2a  Code  Gb  esdhc.o [3]
+_esdhc_write            0x00004a61     0x8e  Code  Gb  esdhc.o [3]
+_event_cleanup          0x000298f5     0x60  Code  Gb  ev_tdel.o [5]
+_event_clear            0x0002900d     0x3c  Code  Gb  ev_clear.o [5]
+_event_create           0x00028eed     0x18  Code  Gb  ev_creat.o [5]
+_event_create_component
+                        0x00029265     0xac  Code  Gb  ev_comp.o [5]
+_event_create_internal  0x00029049     0xac  Code  Gb  ev_creai.o [5]
+_event_open             0x00028f05     0xd4  Code  Gb  ev_open.o [5]
+_event_set              0x00008219     0xc8  Code  Gb  ev_set.o [5]
+_event_wait_all         0x00028fd9     0x34  Code  Gb  ev_all.o [5]
+_event_wait_internal    0x0002917d     0xe8  Code  Gb  ev_waiti.o [5]
+_exit                   0x00000769           Code  Gb  cexit.o [6]
+_int_default_isr        0x000295d5     0x3c  Code  Gb  int_isr.o [5]
+_int_disable            0x0000125d     0x20  Code  Gb  int_disa.o [5]
+_int_enable             0x00001b19     0x28  Code  Gb  int_ena.o [5]
+_int_get_isr_data       0x00005bd9     0x5c  Code  Gb  int_gdat.o [5]
+_int_init               0x00005115     0x74  Code  Gb  int_init.o [5]
+_int_install_isr        0x00001bed     0x90  Code  Gb  int_iisr.o [5]
+_int_kernel_isr         0x00029a67            --   Gb  dispatch.o [5]
+_int_set_vector_table   0x00001bcd      0xa  Code  Gb  int_vtab.o [5]
+_io_adc_install         0x00003c29     0x6a  Code  Gb  adc.o [3]
+_io_debug_close         0x00004cb9     0x52  Code  Gb  iodebug.o [3]
+_io_debug_install       0x00004bf1     0x58  Code  Gb  iodebug.o [3]
+_io_debug_ioctl         0x00004e79     0x60  Code  Gb  iodebug.o [3]
+_io_debug_itm_write_char
+                        0x00004ed9     0x28  Code  Gb  iodebug.o [3]
+_io_debug_open          0x00004c71     0x46  Code  Gb  iodebug.o [3]
+_io_debug_read          0x00004d0d     0x7c  Code  Gb  iodebug.o [3]
+_io_debug_semi_read_char
+                        0x00000439            --   Gb  iodebug_asm.o [3]
+_io_debug_semi_write_char
+                        0x00000421            --   Gb  iodebug_asm.o [3]
+_io_debug_semi_write_string
+                        0x0000042d            --   Gb  iodebug_asm.o [3]
+_io_debug_uninstall     0x00004c49     0x28  Code  Gb  iodebug.o [3]
+_io_debug_write         0x00004d89     0xee  Code  Gb  iodebug.o [3]
+_io_dev_install         0x00006585     0x1c  Code  Gb  io_inst.o [5]
+_io_dev_install_ext     0x00007709    0x118  Code  Gb  io_instx.o [5]
+_io_fopen               0x00007a31     0x90  Code  Gb  io_fopen.o [5]
+_io_gpio_close          0x00003bb9     0x5a  Code  Gb  io_gpio.o [3]
+_io_gpio_install        0x00003a69     0x34  Code  Gb  io_gpio.o [3]
+_io_gpio_open           0x00003a9d    0x11a  Code  Gb  io_gpio.o [3]
+_io_gpio_read           0x00003c21      0x4  Code  Gb  io_gpio.o [3]
+_io_gpio_write          0x00003c25      0x4  Code  Gb  io_gpio.o [3]
+_io_i2c_int_close       0x00005b6d     0x2e  Code  Gb  i2c_int.o [3]
+_io_i2c_int_install     0x00005a9d     0x68  Code  Gb  i2c_int.o [3]
+_io_i2c_int_ioctl       0x00005bad     0x2a  Code  Gb  i2c_int.o [3]
+_io_i2c_int_open        0x00005b31     0x3c  Code  Gb  i2c_int.o [3]
+_io_i2c_int_read        0x00005b9d      0x8  Code  Gb  i2c_int.o [3]
+_io_i2c_int_uninstall   0x00005b05     0x2c  Code  Gb  i2c_int.o [3]
+_io_i2c_int_write       0x00005ba5      0x8  Code  Gb  i2c_int.o [3]
+_io_i2c_polled_close    0x00005a01     0x2e  Code  Gb  i2c_pol.o [3]
+_io_i2c_polled_install  0x0000592d     0x68  Code  Gb  i2c_pol.o [3]
+_io_i2c_polled_ioctl    0x00005a41     0x2a  Code  Gb  i2c_pol.o [3]
+_io_i2c_polled_open     0x000059c1     0x40  Code  Gb  i2c_pol.o [3]
+_io_i2c_polled_read     0x00005a31      0x8  Code  Gb  i2c_pol.o [3]
+_io_i2c_polled_uninstall
+                        0x00005995     0x2c  Code  Gb  i2c_pol.o [3]
+_io_i2c_polled_write    0x00005a39      0x8  Code  Gb  i2c_pol.o [3]
+_io_init                0x00001cc5     0x14  Code  Gb  io_init.o [5]
+_io_ioctl               0x000065a1     0x38  Code  Gb  io_ioctl.o [5]
+_io_serial_default_init
+                        0x00004f05     0x2c  Code  Gb  io_sinit.o [3]
+_io_serial_polled_close
+                        0x000055f1     0x30  Code  Gb  serl_pol.o [3]
+_io_serial_polled_install
+                        0x000054e1     0x6e  Code  Gb  serl_pol.o [3]
+_io_serial_polled_ioctl
+                        0x00005869     0x6a  Code  Gb  serl_pol.o [3]
+_io_serial_polled_open  0x00005551     0x9e  Code  Gb  serl_pol.o [3]
+_io_serial_polled_read  0x00005621    0x15e  Code  Gb  serl_pol.o [3]
+_io_serial_polled_write
+                        0x00005781     0xe6  Code  Gb  serl_pol.o [3]
+_io_spi_polled_close    0x00005d05     0x2e  Code  Gb  spi_pol.o [3]
+_io_spi_polled_install  0x00005c35     0x68  Code  Gb  spi_pol.o [3]
+_io_spi_polled_ioctl    0x00005d45     0x48  Code  Gb  spi_pol.o [3]
+_io_spi_polled_open     0x00005cc5     0x40  Code  Gb  spi_pol.o [3]
+_io_spi_polled_read     0x00005d35      0x8  Code  Gb  spi_pol.o [3]
+_io_spi_polled_uninstall
+                        0x00005c9d     0x28  Code  Gb  spi_pol.o [3]
+_io_spi_polled_write    0x00005d3d      0x8  Code  Gb  spi_pol.o [3]
+_ki2c_int_deinit        0x00002ccd     0x54  Code  Gb  i2c_int_ki2c.o [3]
+_ki2c_int_init          0x00002c35     0x96  Code  Gb  i2c_int_ki2c.o [3]
+_ki2c_int_install       0x00002c0d     0x24  Code  Gb  i2c_int_ki2c.o [3]
+_ki2c_int_rx            0x00002d21     0xf0  Code  Gb  i2c_int_ki2c.o [3]
+_ki2c_int_tx            0x00002e11     0xd4  Code  Gb  i2c_int_ki2c.o [3]
+_ki2c_isr               0x00002ee5    0x2d8  Code  Lc  i2c_int_ki2c.o [3]
+_ki2c_polled_deinit     0x00002451     0x34  Code  Gb  i2c_pol_ki2c.o [3]
+_ki2c_polled_init       0x00002335    0x11a  Code  Gb  i2c_pol_ki2c.o [3]
+_ki2c_polled_install    0x0000230d     0x26  Code  Gb  i2c_pol_ki2c.o [3]
+_ki2c_polled_ioctl      0x00002485    0x2ec  Code  Gb  i2c_pol_ki2c.o [3]
+_ki2c_polled_rx         0x00002779     0x78  Code  Gb  i2c_pol_ki2c.o [3]
+_ki2c_polled_rx_tx      0x00002865    0x29c  Code  Lc  i2c_pol_ki2c.o [3]
+_ki2c_polled_tx         0x000027f1     0x74  Code  Gb  i2c_pol_ki2c.o [3]
+_kinetis_mpu_disable    0x00001cb1      0xe  Code  Gb  kinetis_mpu.o [5]
+_kuart_polled_deinit    0x000020cd     0x1e  Code  Gb  serl_pol_kuart.o [3]
+_kuart_polled_getc      0x000020ed     0x12  Code  Gb  serl_pol_kuart.o [3]
+_kuart_polled_init      0x00001fd9     0xf2  Code  Gb  serl_pol_kuart.o [3]
+_kuart_polled_install   0x00001fa9     0x2e  Code  Gb  serl_pol_kuart.o [3]
+_kuart_polled_ioctl     0x00002125    0x1e6  Code  Gb  serl_pol_kuart.o [3]
+_kuart_polled_putc      0x00002101     0x12  Code  Gb  serl_pol_kuart.o [3]
+_kuart_polled_status    0x00002115     0x10  Code  Gb  serl_pol_kuart.o [3]
+_lwevent_set            0x00007d9d     0xc8  Code  Gb  lwe_set.o [5]
+_lwmem_alloc            0x00001b89     0x10  Code  Gb  lwm_allo.o [5]
+_lwmem_alloc_at         0x00001b99     0x1a  Code  Gb  lwm_allo.o [5]
+_lwmem_alloc_at_internal
+                        0x00001897     0xee  Code  Gb  lwm_alli.o [5]
+_lwmem_alloc_internal   0x000017c1     0xd6  Code  Gb  lwm_alli.o [5]
+_lwmem_alloc_system     0x0000127d     0x14  Code  Gb  lwm_gsys.o [5]
+_lwmem_alloc_system_zero
+                        0x00005919     0x14  Code  Gb  lwm_zsys.o [5]
+_lwmem_alloc_zero       0x00001b05     0x14  Code  Gb  lwm_allz.o [5]
+_lwmem_create_pool      0x00001759     0x5e  Code  Gb  lwm_crep.o [5]
+_lwmem_free             0x00005001     0xdc  Code  Gb  lwm_free.o [5]
+_lwmem_get_next_block_internal
+                        0x00029885     0x6c  Code  Gb  lwm_list.o [5]
+_lwmem_init_internal    0x00001235     0x28  Code  Gb  lwm_init.o [5]
+_lwmem_set_type         0x00001291      0xa  Code  Gb  lwm_size.o [5]
+_lwmem_transfer_internal
+                        0x00001ac1      0x8  Code  Gb  lwm_xfri.o [5]
+_lwsem_create           0x000014f1     0x50  Code  Gb  lws_crea.o [5]
+_lwsem_destroy          0x00007949      0x4  Code  Gb  lws_dest.o [5]
+_lwsem_destroy_internal
+                        0x000078a9     0x96  Code  Gb  lws_dest.o [5]
+_lwsem_post             0x000079b9     0x78  Code  Gb  lws_post.o [5]
+_lwsem_wait             0x0000794d     0x6c  Code  Gb  lws_wait.o [5]
+_main                   0x000004bb           Code  Gb  cmain.o [6]
+_mem_test_and_set       0x00029b31            --   Gb  dispatch.o [5]
+_mem_zero               0x00001061     0xf8  Code  Gb  mem_zero.o [5]
+_mqx                    0x000005ed    0x164  Code  Gb  mqx.o [5]
+_mqx_api_call           0x00029989            --   Gb  dispatch.o [5]
+_mqx_exit               0x00000755      0xa  Code  Gb  mqx.o [5]
+_mqx_idle_task          0x00029621     0x38  Code  Gb  idletask.o [5]
+_mqx_init_kernel_data_internal
+                        0x00001159     0xc0  Code  Gb  mqxiinit.o [5]
+_mqx_kernel_data        0x1fff0000      0x4  Data  Gb  mqx.o [5]
+_mqx_set_cpu_type       0x00001b7d      0xc  Code  Gb  mqx_scpu.o [5]
+_mqx_system_stack       0x1fff0004      0x4  Data  Gb  mqx.o [5]
+_mqx_vendor             0x00000764      0x4  Data  Gb  mqx.o [5]
+_mqx_version_number     0x00000760      0x4  Data  Gb  mqx.o [5]
+_name_add_internal      0x0002937d    0x104  Code  Gb  na_addi.o [5]
+_name_create_handle_internal
+                        0x00029511     0x64  Code  Gb  na_crth.o [5]
+_name_find_internal     0x000290f5     0x88  Code  Gb  na_findi.o [5]
+_pend_svc               0x00029a05            --   Gb  dispatch.o [5]
+_port_int_prio          0x00006574      0x8  Data  Lc  io_gpio_kgpio.o [3]
+_psp_add_ticks          0x00007ed1     0x40  Code  Gb  psp_tiad.o [5]
+_psp_build_stack_frame  0x00001a6d     0x54  Code  Gb  stack_bu.o [5]
+_psp_destroy_stack_frame
+                        0x000298f1      0x2  Code  Gb  stack_de.o [5]
+_psp_exception_return   0x00029af9            --   Gb  dispatch.o [5]
+_psp_init_readyqs       0x00001489     0x5c  Code  Gb  sc_irdyq.o [5]
+_psp_int_init           0x00001bb9     0x12  Code  Gb  psp_iinit.o [5]
+_psp_int_install        0x00005189     0x10  Code  Gb  int_inst.o [5]
+_psp_msecs_to_ticks     0x00007fd5     0x5c  Code  Gb  psp_msti.o [5]
+_psp_msecs_to_ticks_quick
+                        0x00007e65     0x6c  Code  Gb  psp_mstiq.o [5]
+_psp_normalize_ticks    0x00007ac1     0x30  Code  Gb  psp_tinm.o [5]
+_psp_seconds_to_ticks   0x00007fb9     0x1c  Code  Gb  psp_seti.o [5]
+_psp_set_kernel_disable_level
+                        0x0000144d     0x3c  Code  Gb  sc_irdyq.o [5]
+_psp_subtract_ticks     0x00007b41     0x36  Code  Gb  psp_tisu.o [5]
+_psp_ticks_to_time      0x00007bcd     0x98  Code  Gb  psp_tkti.o [5]
+_psp_time_to_ticks      0x00007b19     0x26  Code  Gb  psp_tiol.o [5]
+_queue_dequeue          0x00007f89     0x2e  Code  Gb  qu_deq.o [5]
+_queue_enqueue          0x00001b41     0x3c  Code  Gb  qu_enq.o [5]
+_queue_init             0x0000174d      0xc  Code  Gb  qu_init.o [5]
+_queue_insert           0x000050dd     0x38  Code  Gb  qu_insrt.o [5]
+_rtc_init               0x00001ce9     0xc6  Code  Gb  krtc.o [3]
+_rtc_isr                0x00001db1     0x9c  Code  Gb  krtc.o [3]
+_rtc_sync_with_mqx      0x00001f21     0x5c  Code  Gb  krtc.o [3]
+_rtc_wait_ms            0x00001cd9     0x10  Code  Lc  krtc.o [3]
+_sched_check_scheduler_internal
+                        0x00029969            --   Gb  dispatch.o [5]
+_sched_execute_scheduler_internal
+                        0x00029985            --   Gb  dispatch.o [5]
+_sched_run_internal     0x00029965            --   Gb  dispatch.o [5]
+_sched_start_internal   0x00029961            --   Gb  dispatch.o [5]
+_strnlen                0x00029481     0x1a  Code  Gb  strnlen.o [5]
+_svc_handler            0x0002998f            --   Gb  dispatch.o [5]
+_task_alloc_td_internal
+                        0x00001989     0xb4  Code  Gb  td_alloc.o [5]
+_task_block             0x0002998b            --   Gb  dispatch.o [5]
+_task_destroy           0x0002982d      0x4  Code  Gb  ta_dest.o [5]
+_task_destroy_internal  0x00029681    0x1a8  Code  Gb  ta_dest.o [5]
+_task_exit_function_internal
+                        0x00029659     0x20  Code  Gb  ta_exit.o [5]
+_task_fill_stack_internal
+                        0x00001411     0x12  Code  Gb  ta_init.o [5]
+_task_get_error         0x00005199     0x14  Code  Gb  td_gerr.o [5]
+_task_get_td            0x00029831     0x54  Code  Gb  td_get.o [5]
+_task_init_internal     0x000012c9    0x146  Code  Gb  ta_init.o [5]
+_task_ready_internal    0x00001423     0x22  Code  Gb  ta_init.o [5]
+_task_set_error         0x00001a3d     0x30  Code  Gb  td_serr.o [5]
+_task_set_error_td_internal
+                        0x00029611      0xe  Code  Gb  td_serrt.o [5]
+_time_check_if_leap     0x00007af1     0x28  Code  Gb  ti_leap.o [5]
+_time_days_in_month_internal
+                        0x00029cc8     0x1c  Data  Gb  ti_rom.o [5]
+_time_delay             0x000076c9     0x40  Code  Gb  ti_delay.o [5]
+_time_delay_for         0x000294d5     0x3c  Code  Gb  ti_delfo.o [5]
+_time_delay_internal    0x00007f11     0x78  Code  Gb  ti_deli.o [5]
+_time_delay_until       0x0002949d     0x38  Code  Gb  ti_delun.o [5]
+_time_from_date         0x00005331    0x150  Code  Gb  ti_from.o [5]
+_time_get               0x000054c9     0x18  Code  Gb  ti_get.o [5]
+_time_get_ticks         0x00007b7d     0x50  Code  Gb  ti_gett.o [5]
+_time_notify_kernel     0x00004f31     0xd0  Code  Gb  ti_krnl.o [5]
+_time_secs_before_month_internal
+                        0x00029ce4     0x68  Data  Gb  ti_rom.o [5]
+_time_secs_before_year_internal
+                        0x00029d4c    0x20c  Data  Gb  ti_rom.o [5]
+_time_set               0x00005481     0x48  Code  Gb  ti_kset.o [5]
+_time_set_hwtick_function
+                        0x00001c9d     0x14  Code  Gb  ti_shwtf.o [5]
+_time_set_hwticks_per_tick
+                        0x00001c8d     0x10  Code  Gb  ti_shwtt.o [5]
+_time_set_ticks_per_sec
+                        0x00001c7d     0x10  Code  Gb  ti_sett.o [5]
+_time_set_timer_vector  0x00001bdd     0x10  Code  Gb  ti_setv.o [5]
+_time_to_date           0x00005261     0xd0  Code  Gb  ti_to.o [5]
+adc_address             0x00007ca4      0x8  Data  Lc  adc_mk60.o [3]
+adc_bundle              0x1fff0c70      0x4  Data  Gb  adc_kadc.o [3]
+adc_calibrate           0x00006d05     0x8c  Code  Lc  adc_kadc.o [3]
+adc_complete_isr        0x00006ce9     0x1c  Code  Lc  adc_kadc.o [3]
+adc_get_calibration_data
+                        0x00006d91     0x60  Code  Lc  adc_kadc.o [3]
+adc_internal            0x1fff0c5c     0x14  Data  Lc  adc_kadc.o [3]
+adc_process_all_data    0x00006ca5     0x2c  Code  Gb  adc_kadc.o [3]
+adc_process_data        0x00006c1f     0x86  Code  Lc  adc_kadc.o [3]
+adc_set_calibration_data
+                        0x00006df1     0x60  Code  Lc  adc_kadc.o [3]
+adt_idelay_isr          0x00007609     0x28  Code  Lc  adt_kpdb.o [3]
+adt_period_prescaler    0x00007065    0x17c  Code  Lc  adt_kpdb.o [3]
+alarm_time              0x1fff0c48      0x4  Data  Lc  krtc.o [3]
+dma_ch0_isr             0x000081a1     0x2e  Code  Gb  audio_dma.o [1]
+dspi_address            0x00005da0      0xc  Data  Lc  spi_mk60_dspi.o [3]
+event_dma_rdy           0x1fff0c38      0x4  Data  Gb  main_task.o [1]
+exit                    0x0000050d      0x4  Code  Gb  exit.o [4]
+first_irq               0x1fff0c44      0x4  Data  Gb  io_gpio.o [3]
+gpio_cpu_configure      0x00005dad    0x120  Code  Gb  io_gpio_kgpio.o [3]
+gpio_cpu_init           0x00005ecd      0xe  Code  Gb  io_gpio_kgpio.o [3]
+gpio_cpu_ioctl          0x0000603d    0x430  Code  Gb  io_gpio_kgpio.o [3]
+gpio_cpu_open           0x00005edb    0x162  Code  Gb  io_gpio_kgpio.o [3]
+gpio_eport_irq          0x0000646d     0x8c  Code  Lc  io_gpio_kgpio.o [3]
+gpio_global_irq_map     0x1fff0c88     0x14  Data  Gb  io_gpio_kgpio.o [3]
+gpio_global_pin_map     0x1fff0c74     0x14  Data  Gb  io_gpio_kgpio.o [3]
+init_hardware           0x0000052b     0xa4  Code  Gb  init_hw.o [3]
+main                    0x000004f9     0x14  Code  Gb  mqx_main.o [3]
+main_task               0x000082e1     0x82  Code  Gb  main_task.o [1]
+pctl_ptr_arr            0x00006560     0x14  Data  Lc  io_gpio_kgpio.o [3]
+pdb_external            0x1fff002c      0x4  Data  Lc  adt_kpdb.o [3]
+pdb_internal            0x1fff0008     0x24  Data  Lc  adt_kpdb.o [3]
+strcmp                  0x0000764d           Code  Gb  strcmp.o [6]
+strlen                  0x00007691           Code  Gb  strlen.o [6]
+strncmp                 0x00007c65     0x2a  Code  Gb  strncmp.o [4]
+strncpy                 0x00029311           Code  Gb  strncpy.o [6]
+sw_time                 0x1fff0c4c      0x4  Data  Lc  krtc.o [3]
+systick_config          0x00001549      0xc  Code  Gb  init_bsp.o [3]
+user_enables            0x1fff0c50      0x4  Data  Lc  krtc.o [3]
+user_isr                0x1fff0c58      0x4  Data  Gb  krtc.o [3]
+user_requests           0x1fff0c54      0x4  Data  Lc  krtc.o [3]
+wav_record_file         0x00008388  0x20b64  Data  Gb  main_task.o [1]
+wav_record_size         0x1fff0c34      0x4  Data  Gb  main_task.o [1]
+
+
+[1] = D:\ccwork\b01800_dev_view\IMMAPPS\Application_Notes\ANxxxx_Kitetis_Audio_Galda\AN4369_K60_DMA_Audio_MQX\Debug\Obj
+[2] = command line
+[3] = bsp_twrk60n512_d.a
+[4] = dl7M_tln.a
+[5] = psp_twrk60n512_d.a
+[6] = rt7M_tl.a
+[7] = shb_l.a
+
+  169 816 bytes of readonly  code memory
+    2 145 bytes of readonly  data memory
+    3 296 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

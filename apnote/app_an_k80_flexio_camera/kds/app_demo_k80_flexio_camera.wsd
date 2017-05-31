@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<workspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="workingsets.xsd">
+	<projects>
+		<project>
+			<name>app_demo_k80_flexio_camera_MK80FN256VDC15</name>
+			<path>.</path>
+			<open>true</open>
+			<activeconfig>debug</activeconfig>
+			<buildreferences config="debug">false</buildreferences>
+			<activeconfig>release</activeconfig>
+			<buildreferences config="release">false</buildreferences>
+		</project>
+		<project>
+			<name>ksdk_platform_lib_K80F25615</name>
+			<path>C:/Freescale/KSDK_1.3.0/lib/ksdk_platform_lib/kds/K80F25615</path>
+			<open>true</open>
+			<activeconfig>debug</activeconfig>
+			<buildreferences config="debug">false</buildreferences>
+			<activeconfig>release</activeconfig>
+			<buildreferences config="release">false</buildreferences>
+		</project>
+	</projects>
+	<workingsets>
+		<workingSet editPageId="org.eclipse.cdt.ui.CElementWorkingSetPage" id="1323268527287_1" label="app_demo_k80_flexio_camera" name="app_demo_k80_flexio_camera">
+			<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/ksdk_platform_lib_K80F25615" type="4" />
+			<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/app_demo_k80_flexio_camera_MK80FN256VDC15" type="4" />
+		</workingSet>
+	</workingsets>
+	<cdtconfigurations>
+		<workingSet name="app_demo_k80_flexio_camera">
+			<config name="debug">
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="debug" name="ksdk_platform_lib_K80F25615" />
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="debug" name="app_demo_k80_flexio_camera_MK80FN256VDC15" />
+			</config>
+			<config name="release">
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="release" name="ksdk_platform_lib_K80F25615" />
+				<project config="com.freescale.arm.cdt.toolchain.config.arm.release.695495605" configName="release" name="app_demo_k80_flexio_camera_MK80FN256VDC15" />
+			</config>
+		</workingSet>
+	</cdtconfigurations>
+</workspace>

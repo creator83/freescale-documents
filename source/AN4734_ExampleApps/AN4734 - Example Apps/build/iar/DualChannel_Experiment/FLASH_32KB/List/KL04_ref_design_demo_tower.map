@@ -1,0 +1,389 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.40.3.54009/W32 for ARM              25/Jan/2013  14:41:38 #
+# Copyright 2007-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  D:\Profiles\B38350\My Documents\Code                     #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Exe\KL04_ref_design_ #
+#                    demo_tower.out                                           #
+#    Map file     =  D:\Profiles\B38350\My Documents\Code                     #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\List\KL04_ref_design #
+#                    _demo_tower.map                                          #
+#    Command line =  "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\KL04_ref_design_ #
+#                    demo.o" "D:\Profiles\B38350\My Documents\Code            #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\adc.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\alloc.o"         #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\arm_cm0.o"       #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\assert.o"        #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\crt0.o"          #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\io.o"            #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\llwu.o"          #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\lptmr.o"         #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\mcg.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\memtest.o"       #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\pmc.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\printf.o"        #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\queue.o"         #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\rcm.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\rtc.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\smc.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\start.o"         #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\startup.o"       #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\stdlib.o"        #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\sysinit.o"       #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\uart.o"          #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\uif.o"           #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\Obj\vectors.o"       #
+#                    --redirect _Printf=_PrintfFull --redirect                #
+#                    _Scanf=_ScanfFull -o "D:\Profiles\B38350\My              #
+#                    Documents\Code Repositories\KL05\KL04_SC_TEMP\dummy_back #
+#                    up\dummy\build\iar\KL04_ref_design_demo\FLASH_32KB\Exe\K #
+#                    L04_ref_design_demo_tower.out" --map                     #
+#                    "D:\Profiles\B38350\My Documents\Code                    #
+#                    Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\ #
+#                    iar\KL04_ref_design_demo\FLASH_32KB\List\KL04_ref_design #
+#                    _demo_tower.map" --config "D:\Profiles\B38350\My         #
+#                    Documents\Code Repositories\KL05\KL04_SC_TEMP\dummy_back #
+#                    up\dummy\build\iar\KL04_ref_design_demo\..\config        #
+#                    files\32KB_Pflash.icf" --semihosting --entry             #
+#                    __iar_program_start --vfe                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00008000] { ro, block CodeRelocate };
+"P2":  place in [from 0x20000010 to 0x20000c00] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x410
+  .intvec              const    0x00000000   0x410  vectors.o [1]
+                              - 0x00000410   0x410
+
+"A2":                                         0x18
+  .noinit              ro code  0x00000410    0x18  crt0.o [1]
+                              - 0x00000428    0x18
+
+"P1":                                       0x1f90
+  Veneer               ro code  0x00000428    0x10  - Linker created -
+  .text                ro code  0x00000438   0xae8  KL04_ref_design_demo.o [1]
+  .text                ro code  0x00000f20    0x68  arm_cm0.o [1]
+  .text                ro code  0x00000f88    0xe0  adc.o [1]
+  .text                ro code  0x00001068    0x56  I32DivMod.o [5]
+  .text                ro code  0x000010be    0x2a  zero_init3.o [5]
+  .text                ro code  0x000010e8    0x24  smc.o [1]
+  .text                ro code  0x0000110c   0x2c4  mcg.o [1]
+  .text                ro code  0x000013d0    0x64  lptmr.o [1]
+  .text                ro code  0x00001434   0x4bc  printf.o [1]
+  .text                ro code  0x000018f0     0x2  IntDivZer.o [5]
+  .text                ro code  0x000018f2    0x1e  stdlib.o [1]
+  .text                ro code  0x00001910   0x66a  start.o [1]
+  .text                ro code  0x00001f7c    0xa4  startup.o [1]
+  CodeRelocate                  0x00002020   0x250  <Block>
+    Initializer bytes  ro data  0x00002020   0x250  <for CodeRelocateRam-1>
+  .text                ro code  0x00002270    0x68  vectors.o [1]
+  .rodata              const    0x000022d8    0x38  arm_cm0.o [1]
+  .text                ro code  0x00002310    0x28  data_init3.o [5]
+  .iar.init_table      const    0x00002338    0x10  - Linker created -
+  .text                ro code  0x00002348    0x16  cmain.o [5]
+  .text                ro code  0x0000235e     0x4  low_level_init.o [3]
+  .text                ro code  0x00002362     0x8  exit.o [3]
+  .text                ro code  0x0000236c     0xa  cexit.o [5]
+  .text                ro code  0x00002378    0x14  exit.o [6]
+  .text                ro code  0x0000238c    0x14  io.o [1]
+  .text                ro code  0x000023a0     0xc  uart.o [1]
+  .text                ro code  0x000023ac     0xc  cstartup_M.o [5]
+  .rodata              const    0x000023b8     0x0  zero_init3.o [5]
+                              - 0x000023b8  0x1f90
+
+"P2", part 1 of 2:                           0x250
+  CodeRelocateRam               0x20000010   0x250  <Block>
+    CodeRelocateRam-1           0x20000010   0x250  <Init block>
+      .textrw          inited   0x20000010   0x148  KL04_ref_design_demo.o [1]
+      .textrw          inited   0x20000158   0x108  llwu.o [1]
+                              - 0x20000260   0x250
+
+"P2", part 2 of 2:                            0x44
+  .bss                          0x20000260    0x44  <Block>
+    .bss               zero     0x20000260     0x4  start.o [1]
+    .bss               zero     0x20000264     0x4  start.o [1]
+    .bss               zero     0x20000268     0x4  start.o [1]
+    .bss               zero     0x2000026c     0x4  start.o [1]
+    .bss               zero     0x20000270     0x4  start.o [1]
+    .bss               zero     0x20000274     0x4  start.o [1]
+    .bss               zero     0x20000278     0x4  start.o [1]
+    .bss               zero     0x2000027c     0x4  start.o [1]
+    .bss               zero     0x20000280     0x4  start.o [1]
+    .bss               zero     0x20000284     0x4  start.o [1]
+    .bss               zero     0x20000288     0x4  start.o [1]
+    .bss               zero     0x2000028c     0x4  start.o [1]
+    .bss               zero     0x20000290     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x20000292     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x20000294     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x20000296     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x20000298     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x2000029a     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x2000029c     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x2000029e     0x2  KL04_ref_design_demo.o [1]
+    .bss               zero     0x200002a0     0x2  start.o [1]
+    .bss               zero     0x200002a2     0x2  start.o [1]
+                              - 0x200002a4    0x44
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x44:
+          0x20000260  0x44
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  rw code  ro data  rw data
+    ------                  -------  -------  -------  -------
+D:\Profiles\B38350\My Documents\Code Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\iar\KL04_ref_design_demo\FLASH_32KB\Obj: [1]
+    KL04_ref_design_demo.o    2 792      328      328       16
+    adc.o                       224
+    arm_cm0.o                   104                56
+    crt0.o                       24
+    io.o                         20
+    llwu.o                               264      264
+    lptmr.o                     100
+    mcg.o                       708
+    printf.o                  1 212
+    smc.o                        36
+    start.o                   1 642                         52
+    startup.o                   164
+    stdlib.o                     30
+    uart.o                       12
+    vectors.o                   104             1 040
+    ----------------------------------------------------------
+    Total:                    7 172      592    1 688       68
+
+command line: [2]
+    ----------------------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    exit.o                        8
+    low_level_init.o              4
+    ----------------------------------------------------------
+    Total:                       12
+
+m6M_tl.a: [4]
+    ----------------------------------------------------------
+    Total:
+
+rt6M_tl.a: [5]
+    I32DivMod.o                  86
+    IntDivZer.o                   2
+    cexit.o                      10
+    cmain.o                      22
+    cstartup_M.o                 12
+    data_init3.o                 40
+    zero_init3.o                 42
+    ----------------------------------------------------------
+    Total:                      214
+
+shb_l.a: [6]
+    exit.o                       20
+    ----------------------------------------------------------
+    Total:                       20
+
+    Gaps                          6
+    Linker created               16                16
+--------------------------------------------------------------
+    Grand Total:              7 440      592    1 704       68
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x20000260          --   Gb  - Linker created -
+.bss$$Limit             0x200002a4          --   Gb  - Linker created -
+.data$$Base             0x00000000          --   Gb  - Linker created -
+.data_init$$Base        0x00000000          --   Gb  - Linker created -
+.data_init$$Limit       0x00000000          --   Gb  - Linker created -
+?main                   0x00002349         Code  Gb  cmain.o [5]
+ADCAutoCalibration      0x00000f9f   0x88  Code  Gb  adc.o [1]
+ADC_CP0_Reg             0x2000028c    0x4  Data  Gb  start.o [1]
+ADC_CP1_Reg             0x20000288    0x4  Data  Gb  start.o [1]
+ADC_CP2_Reg             0x20000284    0x4  Data  Gb  start.o [1]
+ADC_CP3_Reg             0x20000280    0x4  Data  Gb  start.o [1]
+ADC_CP4_Reg             0x2000027c    0x4  Data  Gb  start.o [1]
+ADC_CPD_Reg             0x20000274    0x4  Data  Gb  start.o [1]
+ADC_CPS_Reg             0x20000278    0x4  Data  Gb  start.o [1]
+ADC_Config1             0x20000260    0x4  Data  Gb  start.o [1]
+ADC_Config2             0x20000264    0x4  Data  Gb  start.o [1]
+ADC_OFS_Reg             0x20000270    0x4  Data  Gb  start.o [1]
+ADC_SC2_Reg             0x20000268    0x4  Data  Gb  start.o [1]
+ADC_SC3_Reg             0x2000026c    0x4  Data  Gb  start.o [1]
+Alarm_Config            0x00001e81    0x2  Code  Gb  start.o [1]
+Alarm_Test              0x00000925   0xa0  Code  Gb  KL04_ref_design_demo.o [1]
+Bgap_V                  0x200002a2    0x2  Data  Gb  start.o [1]
+CMP0_IRQHandler         0x00000d15  0x126  Code  Gb  KL04_ref_design_demo.o [1]
+CMP0_flag               0x20000298    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+CodeRelocate$$Base      0x00002020          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00002270          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x20000010          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x20000260          --   Gb  - Linker created -
+Drive_Config            0x00001e83   0x1c  Code  Gb  start.o [1]
+Drive_Test              0x000009e1   0xb0  Code  Gb  KL04_ref_design_demo.o [1]
+IO_config               0x00000551  0x198  Code  Gb  KL04_ref_design_demo.o [1]
+InitADC                 0x00000f89   0x16  Code  Gb  adc.o [1]
+LPTMR_IRQHandler        0x2000003f   0x7a  Code  Gb  KL04_ref_design_demo.o [1]
+LPTMR_flag              0x20000296    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+RF_Config               0x00001f79    0x2  Code  Gb  start.o [1]
+RF_Test                 0x00000b05  0x1c4  Code  Gb  KL04_ref_design_demo.o [1]
+RTC_Alarm               0x20000290    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+RTC_Alarm_IRQHandler    0x200000b9   0x64  Code  Gb  KL04_ref_design_demo.o [1]
+RTC_refresh_rate        0x2000029e    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+ReadADCPoll             0x00001045   0x10  Code  Gb  adc.o [1]
+Region$$Table$$Base     0x00002338          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00002348          --   Gb  - Linker created -
+Run_Drive_Test_Loop     0x20000011   0x2e  Code  Gb  KL04_ref_design_demo.o [1]
+SRTC_ISR                0x00002275   0x56  Code  Gb  vectors.o [1]
+Standby_Config          0x00001c95  0x1da  Code  Gb  start.o [1]
+Standby_Test            0x000007ad  0x140  Code  Gb  KL04_ref_design_demo.o [1]
+TPM0_IRQHandler         0x00000e49   0x2a  Code  Gb  KL04_ref_design_demo.o [1]
+TPM0_flag               0x20000292    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+TPM1_IRQHandler         0x00000e79   0x4a  Code  Gb  KL04_ref_design_demo.o [1]
+TPM1_flag               0x20000294    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+TriggerADC              0x00001027   0x1e  Code  Gb  adc.o [1]
+V0_result               0x2000029a    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+V1_result               0x2000029c    0x2  Data  Gb  KL04_ref_design_demo.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x20000bf8          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1ffffc00          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000          --   Gb  command line/config [2]
+__aeabi_idiv            0x00001069         Code  Gb  I32DivMod.o [5]
+__aeabi_idiv0           0x000018f1         Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x00001069         Code  Gb  I32DivMod.o [5]
+__aeabi_uidiv           0x00001091         Code  Gb  I32DivMod.o [5]
+__aeabi_uidivmod        0x00001091         Code  Gb  I32DivMod.o [5]
+__cmain                 0x00002349         Code  Gb  cmain.o [5]
+__exit                  0x00002379   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x00002311   0x28  Code  Gb  data_init3.o [5]
+__iar_program_start     0x000023ad         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x000010bf   0x2a  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0000235f    0x4  Code  Gb  low_level_init.o [3]
+__startup               0x00000411         Code  Gb  crt0.o [1]
+__vector_table          0x00000000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x00002355         Code  Gb  cmain.o [5]
+_exit                   0x0000236d         Code  Gb  cexit.o [5]
+_main                   0x0000235b         Code  Gb  cmain.o [5]
+abort_isr               0x00002273    0x2  Code  Gb  vectors.o [1]
+common_startup          0x00001f7d   0xa4  Code  Gb  startup.o [1]
+default_isr             0x00002271    0x2  Code  Gb  vectors.o [1]
+demo_rtc_init           0x00000479   0xb4  Code  Gb  KL04_ref_design_demo.o [1]
+enable_irq              0x00000f37   0x3e  Code  Gb  arm_cm0.o [1]
+enter_vlls3             0x000010e9   0x1a  Code  Gb  smc.o [1]
+exit                    0x00002363    0x8  Code  Gb  exit.o [3]
+fei_fbe                 0x00001241  0x150  Code  Gb  mcg.o [1]
+fei_fbi                 0x0000110d  0x114  Code  Gb  mcg.o [1]
+llwu_isr                0x20000159  0x108  Code  Gb  llwu.o [1]
+lptmr_init              0x000013d1   0x52  Code  Gb  lptmr.o [1]
+main                    0x00000439   0x3e  Code  Gb  KL04_ref_design_demo.o [1]
+out_char                0x0000238d    0xe  Code  Gb  io.o [1]
+printf                  0x000018cd   0x1e  Code  Gb  printf.o [1]
+printk                  0x0000151b  0x3b2  Code  Gb  printf.o [1]
+printk_mknumstr         0x00001461   0x7e  Code  Lc  printf.o [1]
+printk_pad_space        0x000014fd   0x1e  Code  Lc  printf.o [1]
+printk_pad_zero         0x000014df   0x1e  Code  Lc  printf.o [1]
+printk_putc             0x00001435   0x2c  Code  Lc  printf.o [1]
+start                   0x00001911  0x282  Code  Gb  start.o [1]
+stop                    0x00000f21   0x10  Code  Gb  arm_cm0.o [1]
+strlen                  0x000018f3   0x1e  Code  Gb  stdlib.o [1]
+test_mode               0x200002a0    0x2  Data  Gb  start.o [1]
+uart0_putchar           0x000023a1    0xc  Code  Gb  uart.o [1]
+write_vtor              0x00000f31    0x6  Code  Gb  arm_cm0.o [1]
+
+
+[1] = D:\Profiles\B38350\My Documents\Code Repositories\KL05\KL04_SC_TEMP\dummy_backup\dummy\build\iar\KL04_ref_design_demo\FLASH_32KB\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  7 440 bytes of readonly  code memory
+    592 bytes of readwrite code memory
+  1 704 bytes of readonly  data memory
+     68 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

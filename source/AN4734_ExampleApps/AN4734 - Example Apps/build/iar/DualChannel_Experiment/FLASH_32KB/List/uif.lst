@@ -1,0 +1,101 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.3.54009/W32 for ARM     18/Feb/2013  16:57:32 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\src\common\uif.c                                #
+#    Command line =  "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\src\common\uif.c" -D IAR -D FRDM -D EX2 -lCN    #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\" -lB "D:\Profiles\B38350\My Documents\App             #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\" -o "D:\Profiles\B38350\My Documents\App              #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \" --no_cse --no_unroll --no_inline --no_code_motion     #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M0+ -e --fpu=None           #
+#                    --dlib_config "C:\Program Files\IAR Systems\Embedded     #
+#                    Workbench 6.4\arm\INC\c\DLib_Config_Normal.h" -I         #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\p #
+#                    rojects\DualChannel_Experiment\" -I                      #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    ommon\" -I "D:\Profiles\B38350\My Documents\App          #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    pu\" -I "D:\Profiles\B38350\My Documents\App             #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    pu\headers\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\llwu\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\adc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\lptmr\" -I "D:\Profiles\B38350\My Documents\App   #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\mcg\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\pmc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\rcm\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\rtc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\smc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\uart\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\wdog\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\uart\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\p #
+#                    latforms\" -I "D:\Profiles\B38350\My Documents\App       #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\" -Ol       #
+#                    --use_c++_inline                                         #
+#    List file    =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\uif.lst                                                #
+#    Object file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \uif.o                                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+
+
+ 
+
+ 
+
+
+Errors: none
+Warnings: none

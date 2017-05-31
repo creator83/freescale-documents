@@ -1,0 +1,87 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:15 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_watchdog.c                                           #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_watchdog.c -lCN C:\Users\User\Desktop\freescale\sour #
+#                    ce\Debug\List\ -o C:\Users\User\Desktop\freescale\source #
+#                    \Debug\Obj\ --no_cse --no_unroll --no_inline             #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --char_is_signed --fpu=None --dlib_config             #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.5\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    D:\work\prj\g_demo_k\demo_k\src\include\ -On             #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\hal_wa #
+#                    tchdog.lst                                               #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\hal_wat #
+#                    chdog.o                                                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\hal_watchdog.c
+      1          
+      2          #include "..\\include\\global.h"
+      3          #include "..\\include\\MKxxx.h"
+      4          #include "..\\include\\hal_config.h"
+      5          
+      6          
+
+   \                                 In section .text, align 4, keep-with-next
+      7          void hal_watchdog_close(void)
+      8          {
+      9              WDOG_UNLOCK  = 0xC520;
+   \                     hal_watchdog_close:
+   \   00000000   0x4807             LDR.N    R0,??hal_watchdog_close_0  ;; 0x4005200e
+   \   00000002   0xF24C 0x5120      MOVW     R1,#+50464
+   \   00000006   0x8001             STRH     R1,[R0, #+0]
+     10              WDOG_UNLOCK  = 0xD928;
+   \   00000008   0x4805             LDR.N    R0,??hal_watchdog_close_0  ;; 0x4005200e
+   \   0000000A   0xF64D 0x1128      MOVW     R1,#+55592
+   \   0000000E   0x8001             STRH     R1,[R0, #+0]
+     11              WDOG_STCTRLH &= ~1UL;
+   \   00000010   0x4804             LDR.N    R0,??hal_watchdog_close_0+0x4  ;; 0x40052000
+   \   00000012   0x8800             LDRH     R0,[R0, #+0]
+   \   00000014   0xF64F 0x71FE      MOVW     R1,#+65534
+   \   00000018   0x4008             ANDS     R0,R1,R0
+   \   0000001A   0x4902             LDR.N    R1,??hal_watchdog_close_0+0x4  ;; 0x40052000
+   \   0000001C   0x8008             STRH     R0,[R1, #+0]
+     12          }
+   \   0000001E   0x4770             BX       LR               ;; return
+   \                     ??hal_watchdog_close_0:
+   \   00000020   0x4005200E         DC32     0x4005200e
+   \   00000024   0x40052000         DC32     0x40052000
+     13          
+     14          
+     15          
+     16          
+     17          
+     18          
+     19          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   hal_watchdog_close
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      40  hal_watchdog_close
+
+ 
+ 40 bytes in section .text
+ 
+ 40 bytes of CODE memory
+
+Errors: none
+Warnings: none

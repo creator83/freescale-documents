@@ -1,0 +1,181 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.40.3.54009/W32 for ARM     18/Feb/2013  16:57:29 #
+# Copyright 1999-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example Projects\src\common\io.c #
+#    Command line =  "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\src\common\io.c" -D IAR -D FRDM -D EX2 -lCN     #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\" -lB "D:\Profiles\B38350\My Documents\App             #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\" -o "D:\Profiles\B38350\My Documents\App              #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \" --no_cse --no_unroll --no_inline --no_code_motion     #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M0+ -e --fpu=None           #
+#                    --dlib_config "C:\Program Files\IAR Systems\Embedded     #
+#                    Workbench 6.4\arm\INC\c\DLib_Config_Normal.h" -I         #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\p #
+#                    rojects\DualChannel_Experiment\" -I                      #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    ommon\" -I "D:\Profiles\B38350\My Documents\App          #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    pu\" -I "D:\Profiles\B38350\My Documents\App             #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\c #
+#                    pu\headers\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\llwu\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\adc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\lptmr\" -I "D:\Profiles\B38350\My Documents\App   #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\mcg\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\pmc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\rcm\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\rtc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\smc\" -I "D:\Profiles\B38350\My Documents\App     #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\uart\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\wdog\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\d #
+#                    rivers\uart\" -I "D:\Profiles\B38350\My Documents\App    #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\..\..\src\p #
+#                    latforms\" -I "D:\Profiles\B38350\My Documents\App       #
+#                    Notes\Kinetis\L Series\CMP pin sampling\Example          #
+#                    Projects\build\iar\DualChannel_Experiment\..\" -Ol       #
+#                    --use_c++_inline                                         #
+#    List file    =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\io.lst                                                 #
+#    Object file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \io.o                                                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\Profiles\B38350\My Documents\App Notes\Kinetis\L Series\CMP pin sampling\Example Projects\src\common\io.c
+      1          /*
+      2           * File:		io.c
+      3           * Purpose:		Serial Input/Output routines
+      4           *
+      5           * Notes:       TERMINAL_PORT defined in <board>.h
+      6           */
+      7          
+      8          #include "common.h"
+      9          #include "uart.h"
+     10          
+     11          /********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     12          char
+     13          in_char (void)
+     14          {
+   \                     in_char:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     15          	return uart0_getchar(TERM_PORT);
+   \   00000002   0x....             LDR      R0,??DataTable2  ;; 0x4006a000
+   \   00000004   0x.... 0x....      BL       uart0_getchar
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     16           
+     17          }
+     18          /********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     19          void
+     20          out_char (char ch)
+     21          {
+   \                     out_char:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     22            uart0_putchar(TERM_PORT, ch);
+   \   00000002   0x0001             MOVS     R1,R0
+   \   00000004   0xB2C9             UXTB     R1,R1
+   \   00000006   0x....             LDR      R0,??DataTable2  ;; 0x4006a000
+   \   00000008   0x.... 0x....      BL       uart0_putchar
+     23            
+     24          }
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+     25          
+     26          /********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     27          int
+     28          char_present (void)
+     29          {
+   \                     char_present:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     30            return uart0_getchar_present(TERM_PORT);
+   \   00000002   0x....             LDR      R0,??DataTable2  ;; 0x4006a000
+   \   00000004   0x.... 0x....      BL       uart0_getchar_present
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     31            
+     32          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x4006A000         DC32     0x4006a000
+     33          /********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+        8  char_present
+             8 -> uart0_getchar_present
+        8  in_char
+             8 -> uart0_getchar
+        8  out_char
+             8 -> uart0_putchar
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+      10  char_present
+      10  in_char
+      14  out_char
+
+ 
+ 38 bytes in section .text
+ 
+ 38 bytes of CODE memory
+
+Errors: none
+Warnings: none

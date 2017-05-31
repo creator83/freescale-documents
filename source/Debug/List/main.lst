@@ -1,0 +1,93 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:14 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\main #
+#                    .c                                                       #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\main #
+#                    .c -lCN C:\Users\User\Desktop\freescale\source\Debug\Lis #
+#                    t\ -o C:\Users\User\Desktop\freescale\source\Debug\Obj\  #
+#                    --no_cse --no_unroll --no_inline --no_code_motion        #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M4 -e --char_is_signed      #
+#                    --fpu=None --dlib_config "C:\Program Files\IAR           #
+#                    Systems\Embedded Workbench 6.5\arm\INC\c\DLib_Config_Nor #
+#                    mal.h" -I D:\work\prj\g_demo_k\demo_k\src\include\ -On   #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\main.l #
+#                    st                                                       #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\main.o  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\main.c
+      1          
+      2          
+      3          
+      4          #include "include\\global.h"
+      5          #include "include\\app_main.h"
+      6          #include "include\\hal.h"
+      7          #include "include\\app_audio.h"
+      8          
+
+   \                                 In section .text, align 4, keep-with-next
+      9          int main(void)
+     10          {
+   \                     main:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     11              hal_init();
+   \   00000002   0x.... 0x....      BL       hal_init
+     12              printf("main\n");
+   \   00000006   0x4803             LDR.N    R0,??main_0
+   \   00000008   0x.... 0x....      BL       q_printf
+     13              app_audio();
+   \   0000000C   0x.... 0x....      BL       app_audio
+     14          
+     15              while(1);
+   \                     ??main_1:
+   \   00000010   0xE7FE             B.N      ??main_1
+   \   00000012   0xBF00             Nop      
+   \                     ??main_0:
+   \   00000014   0x........         DC32     `?<Constant "main\\n">`
+     16          }
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "main\\n">`:
+   \   00000000   0x6D 0x61          DC8 "main\012"
+   \              0x69 0x6E    
+   \              0x0A 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+     17          
+     18          
+     19          
+     20          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   main
+         8   -> app_audio
+         8   -> hal_init
+         8   -> q_printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       8  ?<Constant "main\n">
+      24  main
+
+ 
+  8 bytes in section .rodata
+ 24 bytes in section .text
+ 
+ 24 bytes of CODE  memory
+  8 bytes of CONST memory
+
+Errors: none
+Warnings: none

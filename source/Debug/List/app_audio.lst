@@ -1,0 +1,222 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:14 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\app\ #
+#                    app_audio.c                                              #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\app\ #
+#                    app_audio.c -lCN C:\Users\User\Desktop\freescale\source\ #
+#                    Debug\List\ -o C:\Users\User\Desktop\freescale\source\De #
+#                    bug\Obj\ --no_cse --no_unroll --no_inline                #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --char_is_signed --fpu=None --dlib_config             #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.5\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    D:\work\prj\g_demo_k\demo_k\src\include\ -On             #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\app_au #
+#                    dio.lst                                                  #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\app_aud #
+#                    io.o                                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\app\app_audio.c
+      1          
+      2          
+      3          #include "..\\include\\global.h"
+      4          #include "..\\include\\hal_i2c.h"
+      5          #include "..\\include\\hal_i2s.h"
+      6          #include "..\\include\\hal_audio.h"
+      7          #include "..\\include\\MKxxx.h"
+      8          #include "math.h"
+      9          
+     10          #define BUF_N_SAMPLES 160
+
+   \                                 In section .bss, align 4
+     11          static s32 sin_table[BUF_N_SAMPLES];
+   \                     sin_table:
+   \   00000000                      DS8 640
+
+   \                                 In section .bss, align 4
+     12          static s32 sin_table2[BUF_N_SAMPLES];
+   \                     sin_table2:
+   \   00000000                      DS8 640
+     13          
+
+   \                                 In section .text, align 2, keep-with-next
+     14          void sin_table_init(void)
+     15          {
+   \                     sin_table_init:
+   \   00000000   0xB510             PUSH     {R4,LR}
+     16              int i;
+     17              
+     18              for(i=0;i<BUF_N_SAMPLES;i++)
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x0004             MOVS     R4,R0
+   \                     ??sin_table_init_0:
+   \   00000006   0x2CA0             CMP      R4,#+160
+   \   00000008   0xDA2F             BGE.N    ??sin_table_init_1
+     19              {
+     20                  sin_table[i]  = (s32)(6000*sin(2*3.1415926*1000*((float)i/(float)32000)));
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       __aeabi_i2f
+   \   00000010   0x....             LDR.N    R1,??DataTable2  ;; 0x46fa0000
+   \   00000012   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000016   0x.... 0x....      BL       __aeabi_f2d
+   \   0000001A   0x....             LDR.N    R2,??DataTable2_1  ;; 0x69446738
+   \   0000001C   0x....             LDR.N    R3,??DataTable2_2  ;; 0x40b88b2f
+   \   0000001E   0x.... 0x....      BL       __aeabi_dmul
+   \   00000022   0x.... 0x....      BL       sin
+   \   00000026   0x2200             MOVS     R2,#+0
+   \   00000028   0x....             LDR.N    R3,??DataTable2_3  ;; 0x40b77000
+   \   0000002A   0x.... 0x....      BL       __aeabi_dmul
+   \   0000002E   0x.... 0x....      BL       __aeabi_d2iz
+   \   00000032   0x....             LDR.N    R1,??DataTable2_4
+   \   00000034   0xF841 0x0024      STR      R0,[R1, R4, LSL #+2]
+     21                  sin_table2[i] = (s32)(6000*sin(2*3.1415926*200*((float)i/(float)32000)));
+   \   00000038   0x0020             MOVS     R0,R4
+   \   0000003A   0x.... 0x....      BL       __aeabi_i2f
+   \   0000003E   0x....             LDR.N    R1,??DataTable2  ;; 0x46fa0000
+   \   00000040   0x.... 0x....      BL       __aeabi_fdiv
+   \   00000044   0x.... 0x....      BL       __aeabi_f2d
+   \   00000048   0x....             LDR.N    R2,??DataTable2_5  ;; 0x5436b8fa
+   \   0000004A   0x....             LDR.N    R3,??DataTable2_6  ;; 0x4093a28c
+   \   0000004C   0x.... 0x....      BL       __aeabi_dmul
+   \   00000050   0x.... 0x....      BL       sin
+   \   00000054   0x2200             MOVS     R2,#+0
+   \   00000056   0x....             LDR.N    R3,??DataTable2_3  ;; 0x40b77000
+   \   00000058   0x.... 0x....      BL       __aeabi_dmul
+   \   0000005C   0x.... 0x....      BL       __aeabi_d2iz
+   \   00000060   0x....             LDR.N    R1,??DataTable2_7
+   \   00000062   0xF841 0x0024      STR      R0,[R1, R4, LSL #+2]
+     22              }
+   \   00000066   0x1C64             ADDS     R4,R4,#+1
+   \   00000068   0xE7CD             B.N      ??sin_table_init_0
+     23          }
+   \                     ??sin_table_init_1:
+   \   0000006A   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     24          void app_audio(void)
+     25          {
+   \                     app_audio:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     26              sin_table_init();
+   \   00000002   0x.... 0x....      BL       sin_table_init
+     27              hal_i2c_init();
+   \   00000006   0x.... 0x....      BL       hal_i2c_init
+     28              hal_i2s_init();
+   \   0000000A   0x.... 0x....      BL       hal_i2s_init
+     29              hal_audio_init();
+   \   0000000E   0x.... 0x....      BL       hal_audio_init
+     30              hal_i2s_enable();
+   \   00000012   0x.... 0x....      BL       hal_i2s_enable
+     31              hal_audio_play(sin_table, sin_table2, BUF_N_SAMPLES);
+   \   00000016   0x22A0             MOVS     R2,#+160
+   \   00000018   0x....             LDR.N    R1,??DataTable2_7
+   \   0000001A   0x....             LDR.N    R0,??DataTable2_4
+   \   0000001C   0x.... 0x....      BL       hal_audio_play
+     32          }
+   \   00000020   0xBD01             POP      {R0,PC}          ;; return
+     33          
+
+   \                                 In section .text, align 2, keep-with-next
+     34          void app_isr_dma0(void)
+     35          {
+   \                     app_isr_dma0:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     36              hal_fill_tx_buf(sin_table, sin_table2, BUF_N_SAMPLES);
+   \   00000002   0x22A0             MOVS     R2,#+160
+   \   00000004   0x....             LDR.N    R1,??DataTable2_7
+   \   00000006   0x....             LDR.N    R0,??DataTable2_4
+   \   00000008   0x.... 0x....      BL       hal_fill_tx_buf
+     37          }
+   \   0000000C   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x46FA0000         DC32     0x46fa0000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x69446738         DC32     0x69446738
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x40B88B2F         DC32     0x40b88b2f
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x40B77000         DC32     0x40b77000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0x........         DC32     sin_table
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \   00000000   0x5436B8FA         DC32     0x5436b8fa
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_6:
+   \   00000000   0x4093A28C         DC32     0x4093a28c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_7:
+   \   00000000   0x........         DC32     sin_table2
+     38          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   app_audio
+         8   -> hal_audio_init
+         8   -> hal_audio_play
+         8   -> hal_i2c_init
+         8   -> hal_i2s_enable
+         8   -> hal_i2s_init
+         8   -> sin_table_init
+       8   app_isr_dma0
+         8   -> hal_fill_tx_buf
+       8   sin_table_init
+         8   -> __aeabi_d2iz
+         8   -> __aeabi_dmul
+         8   -> __aeabi_f2d
+         8   -> __aeabi_fdiv
+         8   -> __aeabi_i2f
+         8   -> sin
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+      34  app_audio
+      14  app_isr_dma0
+     640  sin_table
+     640  sin_table2
+     108  sin_table_init
+
+ 
+ 1 280 bytes in section .bss
+   188 bytes in section .text
+ 
+   188 bytes of CODE memory
+ 1 280 bytes of DATA memory
+
+Errors: none
+Warnings: none

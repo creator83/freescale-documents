@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<APSC_Memento>
+<host>
+<properties>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].RetryConnectionOn" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].memConfigPath" value="${workspace_loc:/low_power_demo/Project_Settings/Debugger/MK20DX128.mem}"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_PCI_DELAY" value="1"/>
+<property key="propertySet.[cw.dbg.ct].Connection Type" value="com.pemicro.mcu.debug.connections.pne.arm"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.Library" value="arm_pne_gdi"/>
+<property key="host.defaultEncoding" value=""/>
+<property key="propertySet.[cw.ide.settingscache].hidden.HostID" value="com.freescale.cdt.debug.cw.core.ui.rse.systemtype.bareboard.hardware.120215104937-0600"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.freescale.cdt.debug.cw.core.settings.GdiConnection.Common.SimulatorConnectionAttributeBase" value=""/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_PowerDownDelay" value="250"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].RetryTimeout" value="20"/>
+<property key="propertySet.[cw.ide.settingscache].hidden.TimeStamp" value="1329331763522"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_FORCE_MASS_ERASE" value="1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useMemoryConfigFile" value="true"/>
+<property key="hidden.applicator.com.freescale.debugger.applicator.launchconfiguration.lc.FLASH_OSJTAG.proj.low_power_demo" value="com.freescale.debugger.applicator.launchconfiguration.lc.FLASH_OSJTAG.proj.low_power_demo"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_SPECIFY_IP_ENABLED" value="0"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_SPECIFY_NETWORKCARD_ENABLED" value="0"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_PORT" value="21"/>
+<property key="host.description" value="FLASH_OSJTAG"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].retryPromptUserActionOn" value="true"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_currentvoltage" value="255"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.CommandLineArgs" value="arm_icd "/>
+<property key="propertySet.[cw.dbg.main].systemType" value="com.freescale.cw.system.kinetis.K20D.K20DX128Z"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.UUID" value="9d771128-6b0c-4966-ace7-4f5ffc529e0d"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].initPath" value="${workspace_loc:/low_power_demo/Project_Settings/Debugger/init_kinetis.tcl}"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.ConfigFile" value=""/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_USE_CYCLONEPRO_RELAYS" value="1"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].RetryWithTimeoutOn" value="false"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.freescale.cdt.debug.cw.core.settings.GdiConnection.Common.PhysicalConnectionAttributeBase" value="com.pemicro.mcu.debug.connections.pne.arm."/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_PowerUpDelay" value="250"/>
+<property key="host.promptable" value="false"/>
+<property key="propertySet.[OptionalPropertySet].enableConnectorServicesPropertyPage" value="false"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].TerminateConnectionOn" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useInitFile" value="true"/>
+<property key="host.type" value="com.freescale.cdt.debug.cw.core.ui.rse.systemtype.bareboard.hardware"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_RESET_DELAY" value="0"/>
+<property key="host.defaultUser" value="B22247"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_interface_selection" value="1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard.gdi].logData" value="false"/>
+<property key="propertySet.[OptionalPropertySet].enableGenericHostPropertyPage" value="false"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_SPECIFY_IP" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].executeReset" value="false"/>
+<property key="host.name" value="FLASH_OSJTAG"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.freescale.cdt.debug.cw.CW_SHADOWED_PREF.Embedded Initialization.simulator" value=""/>
+<property key="host.address" value=""/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_CyclonePro_poweroffonexit" value="1"/>
+<property key="propertySet.[com.pemicro.mcu.debug.connections.pne.arm].com.pemicro.mcu.debug.connections.pne.arm.STARTUP_SPECIFY_NETWORKCARD" value="127.0.0.1"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].runOutOfReset" value="false"/>
+</properties>
+</host>
+<host>
+<properties>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].RetryConnectionOn" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].memConfigPath" value="${workspace_loc:/low_power_demo/Project_Settings/Debugger/MK20DX128.mem}"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.Library" value="arm_jlink_gdi"/>
+<property key="propertySet.[cw.dbg.ct].Connection Type" value="com.freescale.mcu.debug.connections.jlink.arm"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.CommandLineArgs" value=""/>
+<property key="host.defaultEncoding" value=""/>
+<property key="propertySet.[cw.ide.settingscache].hidden.HostID" value="com.freescale.cdt.debug.cw.core.ui.rse.systemtype.bareboard.hardware.120215105041-0600"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.cdt.debug.cw.core.settings.GdiConnection.Common.PhysicalConnectionAttributeBase" value="com.freescale.mcu.debug.connections.jlink.arm."/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].RetryTimeout" value="20"/>
+<property key="propertySet.[cw.ide.settingscache].hidden.TimeStamp" value="1329331763568"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useMemoryConfigFile" value="true"/>
+<property key="host.description" value="FLASH_Segger"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].retryPromptUserActionOn" value="true"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.names_of_user_added_attributes" value=""/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.Delay after reset (ms)" value="0"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.Reset" value="Kinetis"/>
+<property key="propertySet.[cw.dbg.main].systemType" value="com.freescale.cw.system.kinetis.K20D.K20DX128Z"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.JTAG/SWD speed" value="Auto"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].initPath" value="${workspace_loc:/low_power_demo/Project_Settings/Debugger/init_kinetis.tcl}"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].RetryWithTimeoutOn" value="false"/>
+<property key="host.promptable" value="false"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.ConfigFile" value=""/>
+<property key="propertySet.[OptionalPropertySet].enableConnectorServicesPropertyPage" value="false"/>
+<property key="propertySet.[cw.dbg.ct.targetConnLost].TerminateConnectionOn" value="false"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].useInitFile" value="true"/>
+<property key="host.type" value="com.freescale.cdt.debug.cw.core.ui.rse.systemtype.bareboard.hardware"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.JTAG/SWD fixed speed (Khz)" value="10000"/>
+<property key="host.defaultUser" value="B22247"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.cdt.debug.cw.core.settings.GdiConnection.Common.SimulatorConnectionAttributeBase" value=""/>
+<property key="propertySet.[cw.dbg.ct.bareboard.gdi].logData" value="false"/>
+<property key="propertySet.[OptionalPropertySet].enableGenericHostPropertyPage" value="false"/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.cdt.debug.cw.CW_SHADOWED_PREF.Embedded Initialization.simulator" value=""/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.Debug port interface" value="JTAG"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].executeReset" value="false"/>
+<property key="host.name" value="FLASH_Segger"/>
+<property key="host.address" value=""/>
+<property key="propertySet.[com.freescale.mcu.debug.connections.jlink.arm].com.freescale.mcu.debug.connections.jlink.arm.USB device" value="0"/>
+<property key="propertySet.[cw.dbg.ct.bareboard].runOutOfReset" value="false"/>
+<property key="hidden.applicator.com.freescale.debugger.applicator.launchconfiguration.lc.FLASH_Segger.proj.low_power_demo" value="com.freescale.debugger.applicator.launchconfiguration.lc.FLASH_Segger.proj.low_power_demo"/>
+</properties>
+</host>
+</APSC_Memento>

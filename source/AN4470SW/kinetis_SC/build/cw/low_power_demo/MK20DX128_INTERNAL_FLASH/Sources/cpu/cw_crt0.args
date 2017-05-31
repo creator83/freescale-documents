@@ -1,0 +1,1 @@
+-proc cortex-m4 -little -msgstyle parseable -g -nosyspath 

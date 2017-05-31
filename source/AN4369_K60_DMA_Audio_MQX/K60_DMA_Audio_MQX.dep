@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>3576930196</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\Audio_Card\AudioCard.h</file>
+      <file>$PROJ_DIR$\Audio_Card\sgtl5000.c</file>
+      <file>$PROJ_DIR$\Audio_Card\AudioCard.c</file>
+      <file>$PROJ_DIR$\Audio_Card\i2s.c</file>
+      <file>$PROJ_DIR$\Audio_Card\i2s.h</file>
+      <file>$PROJ_DIR$\Audio_Card\sgtl5000.h</file>
+      <file>$PROJ_DIR$\Source\audio_dma.c</file>
+      <file>$PROJ_DIR$\Source\audio_dma.h</file>
+      <file>$PROJ_DIR$\Source\main_task.c</file>
+      <file>$PROJ_DIR$\Source\wav_record.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\mqx_cnfg.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2s.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\AudioCard.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\sgtl5000.o</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_supp.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\small_ram_config.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\verif_enabled_config.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\AudioCard.o</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psptypes.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2s.pbi</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\user_config.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\mqx_macros.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\mqx_cpudef.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_cpudef.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\mqx_ioc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\MK60DZ10.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_cpu.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\kinetis.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\lwmem.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\kinetis_mpu.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\kflexcan.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\cortex.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\adc_kadc.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\i2s.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\apccard.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\kinetis_fcan.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\pcflash.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\krtc.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\flash_ftfl.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\lwevent.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\rtc.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\flashx.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\tchres.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\flash_mk60.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\i2s_audio.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\i2s_ki2s.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\audio_dma.o</file>
+      <file>$PROJ_DIR$\Source\main.c</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\mqx.h</file>
+      <file>$PROJ_DIR$\Debug\List\K60_DMA_Audio_MQX.map</file>
+      <file>$PROJ_DIR$\Debug\Exe\K60_DMA_Audio_MQX.out</file>
+      <file>$PROJ_DIR$\Debug\Exe\K60_DMA_Audio_MQX.srec</file>
+      <file>$PROJ_DIR$\Debug\Obj\K60_DMA_Audio_MQX.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\sgtl5000.pbi</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\intflash.icf</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\audio_dma.pbi</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\mfs\mfs_twrk60n512_d.a</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_twrk60n512_d.a</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\bsp_twrk60n512_d.a</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_time.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_comp.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\psp_math.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\bsp.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\iar_comp.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\bsp_rev.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\twrk60n512.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\Generated_Code\PE_LDD.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\cm_kinetis.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\bsp_cm.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\lpm_kinetis.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\cm.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\init_lpm.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\lpm.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\fio.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\i2c.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\io_rev.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\io.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\serl_kuart.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\serial.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\ioctl.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\i2c_ki2c.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\spi.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\enet.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\spi_dspi.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\lwgpio_kgpio.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\io_mem.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\pcb.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\ethernet.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\macnet_mk60.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\io_gpio.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\io_null.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\lwgpio.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\io_gpio_kgpio.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\esdhc.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\adc_mk60.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\sdcard_spi.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\sdcard.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\adc.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\sdcard_esdhc.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main_task.o</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\pccardflexbus.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\bsp\iodebug.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\lib\twrk60n512.iar\psp\event.h</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\mqx\source\bsp\twrk60n512\mqx_main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\main_task.pbi</file>
+      <file>C:\Freescale\Freescale_MQX_3.8\mqx\source\kernel\idletask.c</file>
+      <file>C:\Program Files\Common Files\IAR Systems\License\Lms.log</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Audio_Card\sgtl5000.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 64</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 5 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 58 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Audio_Card\AudioCard.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 58 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 0 4 5 7</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 0 4 5 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Audio_Card\i2s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 58 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Source\audio_dma.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 54</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 67</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 58 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 119 7 0 4 5</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 119 7 0 4 5</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Source\main_task.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 116</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 121</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 58 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 119 7 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 119 7 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 61 60</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Source\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 57</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 66</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 58 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 119 7 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 59 10 20 15 16 18 27 14 23 30 25 24 32 29 26 21 31 33 34 37 28 36 39 35 77 80 74 73 76 75 79 78 82 81 83 84 86 87 85 88 90 89 93 92 96 95 94 98 100 91 97 102 107 99 103 104 105 101 108 106 109 110 113 112 115 42 117 44 111 114 47 40 43 38 49 46 51 45 48 41 53 52 118 50 119 7 9</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\K60_DMA_Audio_MQX.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 60</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 65 17 54 11 116 13 70 69 68 72 71 22 56</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\K60_DMA_Audio_MQX.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 12 67 19 121 64</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

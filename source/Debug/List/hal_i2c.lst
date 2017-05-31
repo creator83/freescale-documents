@@ -1,0 +1,336 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:13 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_i2c.c                                                #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_i2c.c -lCN C:\Users\User\Desktop\freescale\source\De #
+#                    bug\List\ -o C:\Users\User\Desktop\freescale\source\Debu #
+#                    g\Obj\ --no_cse --no_unroll --no_inline                  #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --char_is_signed --fpu=None --dlib_config             #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.5\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    D:\work\prj\g_demo_k\demo_k\src\include\ -On             #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\hal_i2 #
+#                    c.lst                                                    #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\hal_i2c #
+#                    .o                                                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\hal_i2c.c
+      1          
+      2          #include "..\\include\\global.h"
+      3          #include "..\\include\\MKxxx.h"
+      4          #include "..\\include\\hal_config.h"
+      5          
+      6          
+      7          
+
+   \                                 In section .text, align 2, keep-with-next
+      8          void i2c_set_tx_mode(I2C_MemMapPtr p)
+      9          {
+     10              p->C1 |= I2C_C1_TX_MASK;
+   \                     i2c_set_tx_mode:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF051 0x0110      ORRS     R1,R1,#0x10
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     11          
+     12          }
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     13          void i2c_set_rx_mode(I2C_MemMapPtr p)
+     14          {
+     15              p->C1 &= ~I2C_C1_TX_MASK;
+   \                     i2c_set_rx_mode:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF011 0x01EF      ANDS     R1,R1,#0xEF
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     16          }
+   \   00000008   0x4770             BX       LR               ;; return
+     17          
+
+   \                                 In section .text, align 2, keep-with-next
+     18          void i2c_set_slave_mode(I2C_MemMapPtr p)
+     19          {
+     20              p->C1  &= ~I2C_C1_MST_MASK;
+   \                     i2c_set_slave_mode:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF011 0x01DF      ANDS     R1,R1,#0xDF
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     21          }
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     22          void i2c_set_master_mode(I2C_MemMapPtr p)
+     23          {
+     24              p->C1  |=  I2C_C1_MST_MASK;
+   \                     i2c_set_master_mode:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF051 0x0120      ORRS     R1,R1,#0x20
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     25          }
+   \   00000008   0x4770             BX       LR               ;; return
+     26          
+     27          // i2c general
+     28          
+
+   \                                 In section .text, align 2, keep-with-next
+     29          void i2c_give_nack(I2C_MemMapPtr p)
+     30          {
+     31              p->C1 |= I2C_C1_TXAK_MASK;
+   \                     i2c_give_nack:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF051 0x0108      ORRS     R1,R1,#0x8
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     32          }
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     33          void i2c_give_ack(I2C_MemMapPtr p)
+     34          {
+     35              p->C1 &= ~I2C_C1_TXAK_MASK;
+   \                     i2c_give_ack:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF011 0x01F7      ANDS     R1,R1,#0xF7
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     36          }
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     37          void i2c_repeated_start(I2C_MemMapPtr p)
+     38          {
+     39              p->C1     |= 0x04;
+   \                     i2c_repeated_start:
+   \   00000000   0x7881             LDRB     R1,[R0, #+2]
+   \   00000002   0xF051 0x0104      ORRS     R1,R1,#0x4
+   \   00000006   0x7081             STRB     R1,[R0, #+2]
+     40          }
+   \   00000008   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     41          void i2c_write_byte(I2C_MemMapPtr p, byte data)
+     42          {
+     43              p->D = data;
+   \                     i2c_write_byte:
+   \   00000000   0x7101             STRB     R1,[R0, #+4]
+     44          }
+   \   00000002   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     45          byte i2c_read_byte(I2C_MemMapPtr p)
+     46          {
+     47              return p->D;
+   \                     i2c_read_byte:
+   \   00000000   0x7900             LDRB     R0,[R0, #+4]
+   \   00000002   0x4770             BX       LR               ;; return
+     48          }
+
+   \                                 In section .text, align 2, keep-with-next
+     49          void i2c_start(I2C_MemMapPtr p)
+     50          {
+   \                     i2c_start:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     51              i2c_set_master_mode(p);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       i2c_set_master_mode
+     52              i2c_set_tx_mode(p);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       i2c_set_tx_mode
+     53          }
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     54          void i2c_stop(I2C_MemMapPtr p)
+     55          {
+   \                     i2c_stop:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     56              i2c_set_slave_mode(p);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0x.... 0x....      BL       i2c_set_slave_mode
+     57              i2c_set_rx_mode(p);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0x.... 0x....      BL       i2c_set_rx_mode
+     58          }
+   \   00000010   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     59          void i2c_wait(I2C_MemMapPtr p)
+     60          {
+     61              // wait flag
+     62              while((p->S & I2C_S_IICIF_MASK)==0)
+   \                     i2c_wait:
+   \                     ??i2c_wait_0:
+   \   00000000   0x78C1             LDRB     R1,[R0, #+3]
+   \   00000002   0x0789             LSLS     R1,R1,#+30
+   \   00000004   0xD5FC             BPL.N    ??i2c_wait_0
+     63                  ;
+     64              // clear flag
+     65              p->S |= I2C_S_IICIF_MASK;
+   \   00000006   0x78C1             LDRB     R1,[R0, #+3]
+   \   00000008   0xF051 0x0102      ORRS     R1,R1,#0x2
+   \   0000000C   0x70C1             STRB     R1,[R0, #+3]
+     66          }
+   \   0000000E   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     67          bool i2c_get_ack(I2C_MemMapPtr p)
+     68          {
+   \                     i2c_get_ack:
+   \   00000000   0x0001             MOVS     R1,R0
+     69              if((p->S & I2C_S_RXAK_MASK) == 0)
+   \   00000002   0x78C8             LDRB     R0,[R1, #+3]
+   \   00000004   0x07C0             LSLS     R0,R0,#+31
+   \   00000006   0xD401             BMI.N    ??i2c_get_ack_0
+     70                  return true;
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0xE000             B.N      ??i2c_get_ack_1
+     71              else
+     72                  return false;
+   \                     ??i2c_get_ack_0:
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \                     ??i2c_get_ack_1:
+   \   0000000E   0x4770             BX       LR               ;; return
+     73          }
+     74          
+     75          // -------------------------------------------------
+     76          
+
+   \                                 In section .text, align 2, keep-with-next
+     77          void hal_i2c_init(void)
+     78          {
+     79          #if (BOARD == BOARD_K10)
+     80              SIM_SCGC4 |= SIM_SCGC4_I2C0_MASK;
+     81              PORTB_PCR2 = PORT_PCR_MUX(2);
+     82              PORTB_PCR3 = PORT_PCR_MUX(2);
+     83          
+     84              I2C0_F  = 0x14; // baudrate
+     85              I2C0_C1 = 0x80; // enable IIC
+     86          #endif
+     87          
+     88          #if (BOARD == BOARD_K40) ||(BOARD == BOARD_K50)
+     89              SIM_SCGC4 |= SIM_SCGC4_I2C1_MASK;
+     90              PORTC_PCR10 = PORT_PCR_MUX(2);
+     91              PORTC_PCR11 = PORT_PCR_MUX(2);
+     92          
+     93              I2C1_F  = 0x33;
+     94              I2C1_C1 = 0x80;
+     95          #endif
+     96          
+     97          #if BOARD == BOARD_K60
+     98              SIM_SCGC4 |= SIM_SCGC4_I2C0_MASK;
+   \                     hal_i2c_init:
+   \   00000000   0x....             LDR.N    R0,??DataTable0  ;; 0x40048034
+   \   00000002   0x6800             LDR      R0,[R0, #+0]
+   \   00000004   0xF050 0x0040      ORRS     R0,R0,#0x40
+   \   00000008   0x....             LDR.N    R1,??DataTable0  ;; 0x40048034
+   \   0000000A   0x6008             STR      R0,[R1, #+0]
+     99              PORTD_PCR8 = PORT_PCR_MUX(2);
+   \   0000000C   0x....             LDR.N    R0,??DataTable0_1  ;; 0x4004c020
+   \   0000000E   0xF44F 0x7100      MOV      R1,#+512
+   \   00000012   0x6001             STR      R1,[R0, #+0]
+    100              PORTD_PCR9 = PORT_PCR_MUX(2);
+   \   00000014   0x....             LDR.N    R0,??DataTable0_2  ;; 0x4004c024
+   \   00000016   0xF44F 0x7100      MOV      R1,#+512
+   \   0000001A   0x6001             STR      R1,[R0, #+0]
+    101          
+    102              I2C0_F  = 0x60;
+   \   0000001C   0x....             LDR.N    R0,??DataTable0_3  ;; 0x40066001
+   \   0000001E   0x2160             MOVS     R1,#+96
+   \   00000020   0x7001             STRB     R1,[R0, #+0]
+    103              I2C0_C1 = 0x80;
+   \   00000022   0x....             LDR.N    R0,??DataTable0_4  ;; 0x40066002
+   \   00000024   0x2180             MOVS     R1,#+128
+   \   00000026   0x7001             STRB     R1,[R0, #+0]
+    104          #endif
+    105          }
+   \   00000028   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x40048034         DC32     0x40048034
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_1:
+   \   00000000   0x4004C020         DC32     0x4004c020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_2:
+   \   00000000   0x4004C024         DC32     0x4004c024
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_3:
+   \   00000000   0x40066001         DC32     0x40066001
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_4:
+   \   00000000   0x40066002         DC32     0x40066002
+    106          
+    107          
+    108          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   hal_i2c_init
+       0   i2c_get_ack
+       0   i2c_give_ack
+       0   i2c_give_nack
+       0   i2c_read_byte
+       0   i2c_repeated_start
+       0   i2c_set_master_mode
+       0   i2c_set_rx_mode
+       0   i2c_set_slave_mode
+       0   i2c_set_tx_mode
+       8   i2c_start
+         8   -> i2c_set_master_mode
+         8   -> i2c_set_tx_mode
+       8   i2c_stop
+         8   -> i2c_set_rx_mode
+         8   -> i2c_set_slave_mode
+       0   i2c_wait
+       0   i2c_write_byte
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable0
+       4  ??DataTable0_1
+       4  ??DataTable0_2
+       4  ??DataTable0_3
+       4  ??DataTable0_4
+      42  hal_i2c_init
+      16  i2c_get_ack
+      10  i2c_give_ack
+      10  i2c_give_nack
+       4  i2c_read_byte
+      10  i2c_repeated_start
+      10  i2c_set_master_mode
+      10  i2c_set_rx_mode
+      10  i2c_set_slave_mode
+      10  i2c_set_tx_mode
+      18  i2c_start
+      18  i2c_stop
+      16  i2c_wait
+       4  i2c_write_byte
+
+ 
+ 208 bytes in section .text
+ 
+ 208 bytes of CODE memory
+
+Errors: none
+Warnings: none

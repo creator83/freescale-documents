@@ -1,0 +1,44 @@
+# Typical ignores from toolchains
+**/.settings
+*.dep
+*.ewt
+*.cwGeneratedFileSetLog
+*.uvguix.*
+*.uvgui.*
+*.bak
+**/UVBuild
+*.tmp
+*.a
+
+# KSDK files to ignore
+*.pdf
+*.peb
+*.zip
+*.svd
+/*.exe
+**/debug
+**/release
+**/iar/settings
+**/iar/*/settings
+**/mdk/output
+/doc
+/tools
+
+# MQX directories to ignore
+**/Int Flash Debug
+**/Int Flash Release
+**/int flash ddrdata debug
+**/int flash ddrdata release
+**/int flash sramdata debug
+**/int flash sramdata release
+
+# Processor Expert
+**/Documentation
+*.g_c
+*.g_x
+
+# Connectivity Software
+**/ConnSw/doc
+
+# Project Specific
+

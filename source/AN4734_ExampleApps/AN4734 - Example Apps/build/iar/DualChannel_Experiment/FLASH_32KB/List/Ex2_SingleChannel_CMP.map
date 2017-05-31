@@ -1,0 +1,334 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.40.3.54009/W32 for ARM              18/Feb/2013  16:57:32 #
+# Copyright 2007-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Exe #
+#                    \Ex2_SingleChannel_CMP.out                               #
+#    Map file     =  D:\Profiles\B38350\My Documents\App Notes\Kinetis\L      #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\Ex2_SingleChannel_CMP.map                              #
+#    Command line =  "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj #
+#                    \Ex2_SingleChannel_CMP.o" "D:\Profiles\B38350\My         #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\adc.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\alloc.o" "D:\Profiles\B38350\My        #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\arm_cm0.o" "D:\Profiles\B38350\My      #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\assert.o" "D:\Profiles\B38350\My       #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\crt0.o" "D:\Profiles\B38350\My         #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\io.o" "D:\Profiles\B38350\My           #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\llwu.o" "D:\Profiles\B38350\My         #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\lptmr.o" "D:\Profiles\B38350\My        #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\mcg.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\memtest.o" "D:\Profiles\B38350\My      #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\pmc.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\printf.o" "D:\Profiles\B38350\My       #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\queue.o" "D:\Profiles\B38350\My        #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\rcm.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\rtc.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\smc.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\start.o" "D:\Profiles\B38350\My        #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\startup.o" "D:\Profiles\B38350\My      #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\stdlib.o" "D:\Profiles\B38350\My       #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\sysinit.o" "D:\Profiles\B38350\My      #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\uart.o" "D:\Profiles\B38350\My         #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\uif.o" "D:\Profiles\B38350\My          #
+#                    Documents\App Notes\Kinetis\L Series\CMP pin             #
+#                    sampling\Example Projects\build\iar\DualChannel_Experime #
+#                    nt\FLASH_32KB\Obj\vectors.o" --redirect                  #
+#                    _Printf=_PrintfFull --redirect _Scanf=_ScanfFull -o      #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Exe #
+#                    \Ex2_SingleChannel_CMP.out" --map                        #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Lis #
+#                    t\Ex2_SingleChannel_CMP.map" --config                    #
+#                    "D:\Profiles\B38350\My Documents\App Notes\Kinetis\L     #
+#                    Series\CMP pin sampling\Example                          #
+#                    Projects\build\iar\DualChannel_Experiment\..\config      #
+#                    files\32KB_Pflash.icf" --semihosting --entry             #
+#                    __iar_program_start --vfe                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00008000] { ro, block CodeRelocate };
+"P2":  place in [from 0x20000010 to 0x20000c00] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address   Size  Object
+  -------              ----        -------   ----  ------
+"A1":                                       0x410
+  .intvec              const    0x00000000  0x410  vectors.o [1]
+                              - 0x00000410  0x410
+
+"A2":                                        0x18
+  .noinit              ro code  0x00000410   0x18  crt0.o [1]
+                              - 0x00000428   0x18
+
+"P1":                                       0xe2c
+  .text                ro code  0x00000428  0x4bc  printf.o [1]
+  .text                ro code  0x000008e4   0x56  I32DivMod.o [5]
+  .text                ro code  0x0000093a   0x1e  stdlib.o [1]
+  .text                ro code  0x00000958    0x2  IntDivZer.o [5]
+  .text                ro code  0x0000095a   0x2a  zero_init3.o [5]
+  Veneer               ro code  0x00000984   0x10  - Linker created -
+  .text                ro code  0x00000994  0x3b8  Ex2_SingleChannel_CMP.o [1]
+  .text                ro code  0x00000d4c  0x134  mcg.o [1]
+  .text                ro code  0x00000e80   0x54  arm_cm0.o [1]
+  CodeRelocate                  0x00000ed4   0xe0  <Block>
+    Initializer bytes  ro data  0x00000ed4   0xe0  <for CodeRelocateRam-1>
+  .text                ro code  0x00000fb4   0xa4  startup.o [1]
+  .text                ro code  0x00001058   0x9c  sysinit.o [1]
+  .text                ro code  0x000010f4   0x68  vectors.o [1]
+  .rodata              const    0x0000115c   0x38  arm_cm0.o [1]
+  .text                ro code  0x00001194   0x28  data_init3.o [5]
+  .iar.init_table      const    0x000011bc   0x10  - Linker created -
+  .text                ro code  0x000011cc   0x18  start.o [1]
+  .text                ro code  0x000011e4   0x16  cmain.o [5]
+  .text                ro code  0x000011fa    0x4  low_level_init.o [3]
+  .text                ro code  0x000011fe    0x8  exit.o [3]
+  .text                ro code  0x00001208    0xa  cexit.o [5]
+  .text                ro code  0x00001214   0x14  exit.o [6]
+  .text                ro code  0x00001228   0x14  io.o [1]
+  .text                ro code  0x0000123c    0xc  uart.o [1]
+  .text                ro code  0x00001248    0xc  cstartup_M.o [5]
+  .rodata              const    0x00001254    0x0  zero_init3.o [5]
+                              - 0x00001254  0xe2c
+
+"P2", part 1 of 2:                           0xe0
+  CodeRelocateRam               0x20000010   0xe0  <Block>
+    CodeRelocateRam-1           0x20000010   0xe0  <Init block>
+      .textrw          inited   0x20000010   0x5c  Ex2_SingleChannel_CMP.o [1]
+      .textrw          inited   0x2000006c   0x84  llwu.o [1]
+                              - 0x200000f0   0xe0
+
+"P2", part 2 of 2:                           0x14
+  .bss                          0x200000f0   0x14  <Block>
+    .bss               zero     0x200000f0    0x4  sysinit.o [1]
+    .bss               zero     0x200000f4    0x4  sysinit.o [1]
+    .bss               zero     0x200000f8    0x4  sysinit.o [1]
+    .bss               zero     0x200000fc    0x4  sysinit.o [1]
+    .bss               zero     0x20000100    0x4  sysinit.o [1]
+                              - 0x20000104   0x14
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x14:
+          0x200000f0  0x14
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                   ro code  rw code  ro data  rw data
+    ------                   -------  -------  -------  -------
+D:\Profiles\B38350\My Documents\App Notes\Kinetis\L Series\CMP pin sampling\Example Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj: [1]
+    Ex2_SingleChannel_CMP.o      952       92       92
+    arm_cm0.o                     84                56
+    crt0.o                        24
+    io.o                          20
+    llwu.o                                132      132
+    mcg.o                        308
+    printf.o                   1 212
+    start.o                       24
+    startup.o                    164
+    stdlib.o                      30
+    sysinit.o                    156                         20
+    uart.o                        12
+    vectors.o                    104             1 040
+    -----------------------------------------------------------
+    Total:                     3 090      224    1 320       20
+
+command line: [2]
+    -----------------------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    exit.o                         8
+    low_level_init.o               4
+    -----------------------------------------------------------
+    Total:                        12
+
+m6M_tl.a: [4]
+    -----------------------------------------------------------
+    Total:
+
+rt6M_tl.a: [5]
+    I32DivMod.o                   86
+    IntDivZer.o                    2
+    cexit.o                       10
+    cmain.o                       22
+    cstartup_M.o                  12
+    data_init3.o                  40
+    zero_init3.o                  42
+    -----------------------------------------------------------
+    Total:                       214
+
+shb_l.a: [6]
+    exit.o                        20
+    -----------------------------------------------------------
+    Total:                        20
+
+    Gaps                           4
+    Linker created                16                16
+---------------------------------------------------------------
+    Grand Total:               3 356      224    1 336       20
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x200000f0          --   Gb  - Linker created -
+.bss$$Limit             0x20000104          --   Gb  - Linker created -
+.data$$Base             0x00000000          --   Gb  - Linker created -
+.data_init$$Base        0x00000000          --   Gb  - Linker created -
+.data_init$$Limit       0x00000000          --   Gb  - Linker created -
+?main                   0x000011e5         Code  Gb  cmain.o [5]
+CodeRelocate$$Base      0x00000ed4          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00000fb4          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x20000010          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x200000f0          --   Gb  - Linker created -
+IO_config               0x00000a99  0x1aa  Code  Gb  Ex2_SingleChannel_CMP.o [1]
+Region$$Table$$Base     0x000011bc          --   Gb  - Linker created -
+Region$$Table$$Limit    0x000011cc          --   Gb  - Linker created -
+Run_RAM_Loop            0x20000011   0x5c  Code  Gb  Ex2_SingleChannel_CMP.o [1]
+SRTC_ISR                0x000010f9   0x56  Code  Gb  vectors.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x20000bf8          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1ffffc00          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000          --   Gb  command line/config [2]
+__aeabi_idiv            0x000008e5         Code  Gb  I32DivMod.o [5]
+__aeabi_idiv0           0x00000959         Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x000008e5         Code  Gb  I32DivMod.o [5]
+__aeabi_uidiv           0x0000090d         Code  Gb  I32DivMod.o [5]
+__aeabi_uidivmod        0x0000090d         Code  Gb  I32DivMod.o [5]
+__cmain                 0x000011e5         Code  Gb  cmain.o [5]
+__exit                  0x00001215   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x00001195   0x28  Code  Gb  data_init3.o [5]
+__iar_program_start     0x00001249         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x0000095b   0x2a  Code  Gb  zero_init3.o [5]
+__low_level_init        0x000011fb    0x4  Code  Gb  low_level_init.o [3]
+__startup               0x00000411         Code  Gb  crt0.o [1]
+__vector_table          0x00000000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x000011f1         Code  Gb  cmain.o [5]
+_exit                   0x00001209         Code  Gb  cexit.o [5]
+_main                   0x000011f7         Code  Gb  cmain.o [5]
+abort_isr               0x000010f7    0x2  Code  Gb  vectors.o [1]
+common_startup          0x00000fb5   0xa4  Code  Gb  startup.o [1]
+core_clk_khz            0x200000f8    0x4  Data  Gb  sysinit.o [1]
+default_isr             0x000010f5    0x2  Code  Gb  vectors.o [1]
+enable_irq              0x00000e87   0x3e  Code  Gb  arm_cm0.o [1]
+exit                    0x000011ff    0x8  Code  Gb  exit.o [3]
+fei_fbi                 0x00000d4d  0x114  Code  Gb  mcg.o [1]
+initialize_CMP          0x00000a19   0x4c  Code  Gb  Ex2_SingleChannel_CMP.o [1]
+initialize_LPTMR        0x000009f3   0x26  Code  Gb  Ex2_SingleChannel_CMP.o [1]
+llwu_isr                0x2000006d   0x84  Code  Gb  llwu.o [1]
+main                    0x00000995   0x5e  Code  Gb  Ex2_SingleChannel_CMP.o [1]
+mcg_clk_hz              0x200000f0    0x4  Data  Gb  sysinit.o [1]
+mcg_clk_khz             0x200000f4    0x4  Data  Gb  sysinit.o [1]
+out_char                0x00001229    0xe  Code  Gb  io.o [1]
+periph_clk_khz          0x200000fc    0x4  Data  Gb  sysinit.o [1]
+printf                  0x000008c1   0x1e  Code  Gb  printf.o [1]
+printk                  0x0000050f  0x3b2  Code  Gb  printf.o [1]
+printk_mknumstr         0x00000455   0x7e  Code  Lc  printf.o [1]
+printk_pad_space        0x000004f1   0x1e  Code  Lc  printf.o [1]
+printk_pad_zero         0x000004d3   0x1e  Code  Lc  printf.o [1]
+printk_putc             0x00000429   0x2c  Code  Lc  printf.o [1]
+start                   0x000011cd   0x14  Code  Gb  start.o [1]
+strlen                  0x0000093b   0x1e  Code  Gb  stdlib.o [1]
+sysinit                 0x00001059   0x78  Code  Gb  sysinit.o [1]
+uart0_clk_khz           0x20000100    0x4  Data  Gb  sysinit.o [1]
+uart0_putchar           0x0000123d    0xc  Code  Gb  uart.o [1]
+write_vtor              0x00000e81    0x6  Code  Gb  arm_cm0.o [1]
+
+
+[1] = D:\Profiles\B38350\My Documents\App Notes\Kinetis\L Series\CMP pin sampling\Example Projects\build\iar\DualChannel_Experiment\FLASH_32KB\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  3 356 bytes of readonly  code memory
+    224 bytes of readwrite code memory
+  1 336 bytes of readonly  data memory
+     20 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

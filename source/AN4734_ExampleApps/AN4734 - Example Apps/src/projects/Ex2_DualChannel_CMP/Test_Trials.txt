@@ -1,0 +1,127 @@
+/****************************************************************************
+**/
+
+ ------ Attempt #1 ---------------------
+ 
+ -- This attempt resulted in both channels simply following V1 (input 1) 
+ which was the input that was always sampled first.  
+ 
+ #elif (defined(EX2))
+    uint8_t SCR_ch1, SCR_ch2;
+    
+    /****************************************************************/
+    /****************  EXPERIMENT  **********************************/
+    // First store the SCR register value
+    SCR_ch1 = CMP0_SCR;
+    
+    // Now select V1
+    CMP0_MUXCR = (CMP_MUXCR_PSEL(CMP_CHANNEL_V1) | CMP_MUXCR_MSEL(CMP_DACIN_6B));
+    
+    // Store the new SCR value.  This ensures a read and ensures that the new channel has been selected. 
+    SCR_ch2 = CMP0_SCR;
+    
+    // Read the output and make decision
+    //if (CMP0_SCR & CMP_SCR_COUT_MASK)
+    if (SCR_ch2 & CMP_SCR_COUT_MASK)
+    {
+        FGPIOB_PSOR = 0x40;
+    }
+    else
+    {
+        FGPIOB_PCOR = 0x40;
+    }
+    
+    
+    //if ((CMP0_SCR & CMP_SCR_CFR_MASK) == CMP_SCR_CFR_MASK)  // Comment out for the experiment
+    if ((SCR_ch1 & CMP_SCR_CFR_MASK) == CMP_SCR_CFR_MASK)
+    {
+        CMP0_SCR = (CMP_SCR_CFR_MASK | CMP_SCR_IEF_MASK);   
+        FGPIOA_PSOR = 0x1000;
+    }
+    else
+    {
+        CMP0_SCR = (CMP_SCR_CFF_MASK | CMP_SCR_IER_MASK);
+        FGPIOA_PCOR = 0x1000;
+    }
+    
+    // Now select V0 before returning
+    CMP0_MUXCR = (CMP_MUXCR_PSEL(CMP_CHANNEL_V0) | CMP_MUXCR_MSEL(CMP_DACIN_6B));
+    
+    
+#elif (defined(EX3))
+
+
+
+------------------------------------------------------------------------------------------------------
+=====================================================================================================
+------------------------------------------------------------------------------------------------------
+
+------ Attempt #2 ---------------------
+
+--This attempt resulted in a distorted variation of the input waveform.  Both
+outputs followed their associated input, but instead of the 10 ms pulse every
+second, the output was a 1/2 Hz square wave.  
+
+-- This attempt actually did result in reproducing the desired waveform.  
+However, you MUST maintain the Nyquist sampling frequency to do so.  This 
+was determined experimentally by varying the width of the input pulse.  The 
+results of these experiments are below:
+
+x   | result
+-------------------------
+21  | pass
+20  | pass
+19  | pass
+18  | marginal (may or may not work correctly)
+17  | fail
+<17 | fail
+
+#elif (defined(EX2))
+    uint8_t SCR_ch1, SCR_ch2;
+    
+    /****************************************************************/
+    /****************  EXPERIMENT  **********************************/
+    // First store the SCR register value
+    SCR_ch1 = CMP0_SCR;
+    
+    // Disable the Trigger mode
+    CMP0_CR1 &= ~CMP_CR1_TRIGM_MASK;
+    
+    // Now select V1
+    CMP0_MUXCR = (CMP_MUXCR_PSEL(CMP_CHANNEL_V1) | CMP_MUXCR_MSEL(CMP_DACIN_6B));
+    
+    // Store the new SCR value.  This ensures a read and ensures that the new channel has been selected. 
+    SCR_ch2 = CMP0_SCR;
+    
+    // Read the output and make decision
+    //if (CMP0_SCR & CMP_SCR_COUT_MASK)
+    if (SCR_ch2 & CMP_SCR_COUT_MASK)
+    {
+        FGPIOB_PSOR = 0x40;
+    }
+    else
+    {
+        FGPIOB_PCOR = 0x40;
+    }
+    
+    
+    //if ((CMP0_SCR & CMP_SCR_CFR_MASK) == CMP_SCR_CFR_MASK)  // Comment out for the experiment
+    if ((SCR_ch1 & CMP_SCR_CFR_MASK) == CMP_SCR_CFR_MASK)
+    {
+        CMP0_SCR = (CMP_SCR_CFR_MASK | CMP_SCR_IEF_MASK);   
+        FGPIOA_PSOR = 0x1000;
+    }
+    else
+    {
+        CMP0_SCR = (CMP_SCR_CFF_MASK | CMP_SCR_IER_MASK);
+        FGPIOA_PCOR = 0x1000;
+    }
+    
+    // Now enable the trigger mode
+    CMP0_CR1 |= CMP_CR1_TRIGM_MASK;
+    
+    // Now select V0 before returning
+    CMP0_MUXCR = (CMP_MUXCR_PSEL(CMP_CHANNEL_V0) | CMP_MUXCR_MSEL(CMP_DACIN_6B));
+    
+    
+#elif (defined(EX3))

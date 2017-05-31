@@ -1,0 +1,165 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:13 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal.c                                                    #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal.c -lCN C:\Users\User\Desktop\freescale\source\Debug\ #
+#                    List\ -o C:\Users\User\Desktop\freescale\source\Debug\Ob #
+#                    j\ --no_cse --no_unroll --no_inline --no_code_motion     #
+#                    --no_tbaa --no_clustering --no_scheduling --debug        #
+#                    --endian=little --cpu=Cortex-M4 -e --char_is_signed      #
+#                    --fpu=None --dlib_config "C:\Program Files\IAR           #
+#                    Systems\Embedded Workbench 6.5\arm\INC\c\DLib_Config_Nor #
+#                    mal.h" -I D:\work\prj\g_demo_k\demo_k\src\include\ -On   #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\hal.ls #
+#                    t                                                        #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\hal.o   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\hal.c
+      1          
+      2          
+      3          
+      4          
+      5          #include "..\\include\\global.h"
+      6          #include "..\\include\\MKxxx.h"
+      7          #include "..\\include\\hal_config.h"
+      8          #include "..\\include\\hal_clock.h"
+      9          #include "..\\include\\hal_dma.h"
+     10          #include "..\\include\\hal_i2c.h"
+     11          #include "..\\include\\hal_i2s.h"
+     12          #include "..\\include\\hal_int.h"
+     13          #include "..\\include\\hal_uart.h"
+     14          #include "..\\include\\hal_watchdog.h"
+     15          
+     16          
+
+   \                                 In section .text, align 2, keep-with-next
+     17          static void show_board_info(void)
+     18          {
+   \                     show_board_info:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     19              printf("\n..........................");
+   \   00000002   0x....             LDR.N    R0,??DataTable0
+   \   00000004   0x.... 0x....      BL       q_printf
+     20          #if BOARD == BOARD_K60
+     21              printf("BOARD_TWR_K60\n");
+   \   00000008   0x....             LDR.N    R0,??DataTable0_1
+   \   0000000A   0x.... 0x....      BL       q_printf
+     22          #elif BOARD == BOARD_K50
+     23              printf("BOARD_TWR_K50\n");
+     24          #elif BOARD == BOARD_K40
+     25              printf("BOARD_TWR_K40\n");
+     26          #elif BOARD == BOARD_K10
+     27              printf("BOARD_TWR_K10\n");
+     28          #endif
+     29          }
+   \   0000000E   0xBD01             POP      {R0,PC}          ;; return
+     30          
+
+   \                                 In section .text, align 2, keep-with-next
+     31          void hal_init(void)
+     32          {
+   \                     hal_init:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     33              hal_watchdog_close();
+   \   00000002   0x.... 0x....      BL       hal_watchdog_close
+     34              hal_clock_init();
+   \   00000006   0x.... 0x....      BL       hal_clock_init
+     35          
+     36              hal_uart_init();
+   \   0000000A   0x.... 0x....      BL       hal_uart_init
+     37              show_board_info();
+   \   0000000E   0x.... 0x....      BL       show_board_info
+     38          
+     39              hal_relocation();
+   \   00000012   0x.... 0x....      BL       hal_relocation
+     40              hal_int_enable();
+   \   00000016   0x.... 0x....      BL       hal_int_enable
+     41          }
+   \   0000001A   0xBD01             POP      {R0,PC}          ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0:
+   \   00000000   0x........         DC32     `?<Constant "\\n.......................">`
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable0_1:
+   \   00000000   0x........         DC32     `?<Constant "BOARD_TWR_K60\\n">`
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "\\n.......................">`:
+   \   00000000   0x0A 0x2E          DC8 "\012.........................."
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x2E    
+   \              0x2E 0x00    
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "BOARD_TWR_K60\\n">`:
+   \   00000000   0x42 0x4F          DC8 "BOARD_TWR_K60\012"
+   \              0x41 0x52    
+   \              0x44 0x5F    
+   \              0x54 0x57    
+   \              0x52 0x5F    
+   \              0x4B 0x36    
+   \              0x30 0x0A    
+   \              0x00         
+   \   0000000F   0x00               DC8 0
+     42          
+     43          
+     44          
+     45          
+     46          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   hal_init
+         8   -> hal_clock_init
+         8   -> hal_int_enable
+         8   -> hal_relocation
+         8   -> hal_uart_init
+         8   -> hal_watchdog_close
+         8   -> show_board_info
+       8   show_board_info
+         8   -> q_printf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      16  ?<Constant "BOARD_TWR_K60\n">
+      28  ?<Constant "\n.......................">
+       4  ??DataTable0
+       4  ??DataTable0_1
+      28  hal_init
+      16  show_board_info
+
+ 
+ 44 bytes in section .rodata
+ 52 bytes in section .text
+ 
+ 52 bytes of CODE  memory
+ 44 bytes of CONST memory
+
+Errors: none
+Warnings: none

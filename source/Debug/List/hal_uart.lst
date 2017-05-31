@@ -1,0 +1,262 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:15 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_uart.c                                               #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_uart.c -lCN C:\Users\User\Desktop\freescale\source\D #
+#                    ebug\List\ -o C:\Users\User\Desktop\freescale\source\Deb #
+#                    ug\Obj\ --no_cse --no_unroll --no_inline                 #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --char_is_signed --fpu=None --dlib_config             #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.5\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    D:\work\prj\g_demo_k\demo_k\src\include\ -On             #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\hal_ua #
+#                    rt.lst                                                   #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\hal_uar #
+#                    t.o                                                      #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\hal_uart.c
+      1          
+      2          #include "..\\include\\global.h"
+      3          #include "..\\include\\MKxxx.h"
+      4          #include "..\\include\\hal_config.h"
+      5          
+      6          
+
+   \                                 In section .text, align 2, keep-with-next
+      7          static void _uart_init(UART_MemMapPtr uart_base_ptr, int sysclk_khz, int baud)
+      8          {
+   \                     _uart_init:
+   \   00000000   0xB470             PUSH     {R4-R6}
+      9              u16 ubd;
+     10              u8 temp;
+     11          
+     12              UART_C2_REG(uart_base_ptr) &= ~(UART_C2_TE_MASK | UART_C2_RE_MASK );
+   \   00000002   0x78C5             LDRB     R5,[R0, #+3]
+   \   00000004   0xF015 0x05F3      ANDS     R5,R5,#0xF3
+   \   00000008   0x70C5             STRB     R5,[R0, #+3]
+     13              UART_C1_REG(uart_base_ptr) = 0;
+   \   0000000A   0x2500             MOVS     R5,#+0
+   \   0000000C   0x7085             STRB     R5,[R0, #+2]
+     14              
+     15              ubd = (u16)((sysclk_khz*1000)/(baud * 16));
+   \   0000000E   0xF44F 0x757A      MOV      R5,#+1000
+   \   00000012   0xFB05 0xF501      MUL      R5,R5,R1
+   \   00000016   0x0116             LSLS     R6,R2,#+4
+   \   00000018   0xFB95 0xF5F6      SDIV     R5,R5,R6
+   \   0000001C   0x002B             MOVS     R3,R5
+     16              temp = UART_BDH_REG(uart_base_ptr) & ~(UART_BDH_SBR(0x1F));
+   \   0000001E   0x7805             LDRB     R5,[R0, #+0]
+   \   00000020   0xF015 0x05E0      ANDS     R5,R5,#0xE0
+   \   00000024   0x002C             MOVS     R4,R5
+     17              
+     18              UART_BDH_REG(uart_base_ptr) = temp |  UART_BDH_SBR(((ubd & 0x1F00) >> 8));
+   \   00000026   0xB29B             UXTH     R3,R3            ;; ZeroExt  R3,R3,#+16,#+16
+   \   00000028   0x0A1D             LSRS     R5,R3,#+8
+   \   0000002A   0xF015 0x051F      ANDS     R5,R5,#0x1F
+   \   0000002E   0x4325             ORRS     R5,R5,R4
+   \   00000030   0x7005             STRB     R5,[R0, #+0]
+     19              UART_BDL_REG(uart_base_ptr) = (u8)(ubd & UART_BDL_SBR_MASK);
+   \   00000032   0x7043             STRB     R3,[R0, #+1]
+     20              UART_C2_REG(uart_base_ptr) |= (UART_C2_TE_MASK | UART_C2_RE_MASK );
+   \   00000034   0x78C5             LDRB     R5,[R0, #+3]
+   \   00000036   0xF055 0x050C      ORRS     R5,R5,#0xC
+   \   0000003A   0x70C5             STRB     R5,[R0, #+3]
+     21          }
+   \   0000003C   0xBC70             POP      {R4-R6}
+   \   0000003E   0x4770             BX       LR               ;; return
+     22          
+
+   \                                 In section .text, align 2, keep-with-next
+     23          static bool _byte_arrive(UART_MemMapPtr uart_base_ptr)
+     24          {
+     25              return UART_S1_REG(uart_base_ptr) & UART_S1_RDRF_MASK;
+   \                     _byte_arrive:
+   \   00000000   0x7900             LDRB     R0,[R0, #+4]
+   \   00000002   0xF010 0x0020      ANDS     R0,R0,#0x20
+   \   00000006   0x4770             BX       LR               ;; return
+     26          }
+
+   \                                 In section .text, align 2, keep-with-next
+     27          static char _get_byte(UART_MemMapPtr uart_base_ptr)
+     28          {
+     29              while (!(UART_S1_REG(uart_base_ptr) & UART_S1_RDRF_MASK));
+   \                     _get_byte:
+   \                     ??_get_byte_0:
+   \   00000000   0x7901             LDRB     R1,[R0, #+4]
+   \   00000002   0x0689             LSLS     R1,R1,#+26
+   \   00000004   0xD5FC             BPL.N    ??_get_byte_0
+     30              return UART_D_REG(uart_base_ptr);
+   \   00000006   0xF990 0x0007      LDRSB    R0,[R0, #+7]
+   \   0000000A   0xB240             SXTB     R0,R0            ;; SignExt  R0,R0,#+24,#+24
+   \   0000000C   0x4770             BX       LR               ;; return
+     31          }
+
+   \                                 In section .text, align 2, keep-with-next
+     32          static void _send_byte(UART_MemMapPtr uart_base_ptr, char ch)
+     33          {
+     34              while(!(UART_S1_REG(uart_base_ptr) & UART_S1_TDRE_MASK));
+   \                     _send_byte:
+   \                     ??_send_byte_0:
+   \   00000000   0x7902             LDRB     R2,[R0, #+4]
+   \   00000002   0x0612             LSLS     R2,R2,#+24
+   \   00000004   0xD5FC             BPL.N    ??_send_byte_0
+     35              UART_D_REG(uart_base_ptr) = (u8)ch;
+   \   00000006   0x71C1             STRB     R1,[R0, #+7]
+     36          }
+   \   00000008   0x4770             BX       LR               ;; return
+     37          
+     38          // ----------------------------------------------------------------
+     39          #if BOARD == BOARD_K10
+     40          void hal_uart_init(void)
+     41          {
+     42              // ser1
+     43              SIM_SCGC4 |= SIM_SCGC4_UART0_MASK;
+     44              PORTB_PCR16 = PORT_PCR_MUX(0x3);
+     45              PORTB_PCR17 = PORT_PCR_MUX(0x3);
+     46              _uart_init(UART0_BASE_PTR, SYS_CLK_KHZ, CONSOLE_BAUDRATE);
+     47          }
+     48          #define UART_CONSOLE UART0_BASE_PTR
+     49          
+     50          #elif (BOARD == BOARD_K60)||(BOARD == BOARD_K50)||(BOARD == BOARD_K40)
+     51          
+
+   \                                 In section .text, align 2, keep-with-next
+     52          void hal_uart_init(void)
+     53          {
+   \                     hal_uart_init:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     54              // ser1
+     55              SIM_SCGC4 |= SIM_SCGC4_UART3_MASK;
+   \   00000002   0x....             LDR.N    R0,??DataTable3  ;; 0x40048034
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0xF450 0x5000      ORRS     R0,R0,#0x2000
+   \   0000000A   0x....             LDR.N    R1,??DataTable3  ;; 0x40048034
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     56              PORTC_PCR16 = PORT_PCR_MUX(0x3);
+   \   0000000E   0x....             LDR.N    R0,??DataTable3_1  ;; 0x4004b040
+   \   00000010   0xF44F 0x7140      MOV      R1,#+768
+   \   00000014   0x6001             STR      R1,[R0, #+0]
+     57              PORTC_PCR17 = PORT_PCR_MUX(0x3);
+   \   00000016   0x....             LDR.N    R0,??DataTable3_2  ;; 0x4004b044
+   \   00000018   0xF44F 0x7140      MOV      R1,#+768
+   \   0000001C   0x6001             STR      R1,[R0, #+0]
+     58              _uart_init(UART3_BASE_PTR, BUS_CLK_KHZ, CONSOLE_BAUDRATE);
+   \   0000001E   0xF45F 0x32E1      MOVS     R2,#+115200
+   \   00000022   0xF645 0x51C0      MOVW     R1,#+24000
+   \   00000026   0x....             LDR.N    R0,??DataTable3_3  ;; 0x4006d000
+   \   00000028   0x.... 0x....      BL       _uart_init
+     59          }
+   \   0000002C   0xBD01             POP      {R0,PC}          ;; return
+     60          #define UART_CONSOLE UART3_BASE_PTR
+     61          
+     62          #endif
+     63          
+     64          
+
+   \                                 In section .text, align 2, keep-with-next
+     65          void hal_uart_shell_send_byte(char ch)
+     66          {
+   \                     hal_uart_shell_send_byte:
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     67              _send_byte(UART_CONSOLE, ch);
+   \   00000004   0x0021             MOVS     R1,R4
+   \   00000006   0xB249             SXTB     R1,R1            ;; SignExt  R1,R1,#+24,#+24
+   \   00000008   0x....             LDR.N    R0,??DataTable3_3  ;; 0x4006d000
+   \   0000000A   0x.... 0x....      BL       _send_byte
+     68          }
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+
+   \                                 In section .text, align 2, keep-with-next
+     69          bool hal_uart_shell_byte_available(void)
+     70          {
+   \                     hal_uart_shell_byte_available:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     71              return _byte_arrive(UART_CONSOLE);
+   \   00000002   0x....             LDR.N    R0,??DataTable3_3  ;; 0x4006d000
+   \   00000004   0x.... 0x....      BL       _byte_arrive
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     72          }
+
+   \                                 In section .text, align 2, keep-with-next
+     73          char hal_uart_shell_recv_byte(void)
+     74          {
+   \                     hal_uart_shell_recv_byte:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     75              return _get_byte(UART_CONSOLE);
+   \   00000002   0x....             LDR.N    R0,??DataTable3_3  ;; 0x4006d000
+   \   00000004   0x.... 0x....      BL       _get_byte
+   \   00000008   0xBD02             POP      {R1,PC}          ;; return
+     76          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3:
+   \   00000000   0x40048034         DC32     0x40048034
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_1:
+   \   00000000   0x4004B040         DC32     0x4004b040
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_2:
+   \   00000000   0x4004B044         DC32     0x4004b044
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable3_3:
+   \   00000000   0x4006D000         DC32     0x4006d000
+     77          
+     78          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   _byte_arrive
+       0   _get_byte
+       0   _send_byte
+      12   _uart_init
+       8   hal_uart_init
+         8   -> _uart_init
+       8   hal_uart_shell_byte_available
+         8   -> _byte_arrive
+       8   hal_uart_shell_recv_byte
+         8   -> _get_byte
+       8   hal_uart_shell_send_byte
+         8   -> _send_byte
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable3
+       4  ??DataTable3_1
+       4  ??DataTable3_2
+       4  ??DataTable3_3
+       8  _byte_arrive
+      14  _get_byte
+      10  _send_byte
+      64  _uart_init
+      46  hal_uart_init
+      10  hal_uart_shell_byte_available
+      10  hal_uart_shell_recv_byte
+      16  hal_uart_shell_send_byte
+
+ 
+ 194 bytes in section .text
+ 
+ 194 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,21 @@
+# The sources block assigns file names to identifiers.
+sources {
+    # SREC File path
+    mySrecFile = ".\debug\flexio_TWR-LCD-RGB.srec";
+    # QCB file path
+    qspiConfigBlock = ".\..\qspi_config_block.bin";
+}
+
+# The section block specifies the sequence of boot commands to be written to 
+# the SB file.
+section (0) {
+    
+    # Load the QCB above
+    load qspiConfigBlock > 0x68000000;
+    
+    # Load all the RO data from srec file, including vector table, 
+    # flash config area and codes.
+    load mySrecFile;
+}
+
+

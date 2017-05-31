@@ -1,0 +1,253 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.50.3.4676/W32 for ARM      15/Jul/2015  14:11:14 #
+# Copyright 1999-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_audio.c                                              #
+#    Command line =  C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\ #
+#                    hal_audio.c -lCN C:\Users\User\Desktop\freescale\source\ #
+#                    Debug\List\ -o C:\Users\User\Desktop\freescale\source\De #
+#                    bug\Obj\ --no_cse --no_unroll --no_inline                #
+#                    --no_code_motion --no_tbaa --no_clustering               #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --char_is_signed --fpu=None --dlib_config             #
+#                    "C:\Program Files\IAR Systems\Embedded Workbench         #
+#                    6.5\arm\INC\c\DLib_Config_Normal.h" -I                   #
+#                    D:\work\prj\g_demo_k\demo_k\src\include\ -On             #
+#    List file    =  C:\Users\User\Desktop\freescale\source\Debug\List\hal_au #
+#                    dio.lst                                                  #
+#    Object file  =  C:\Users\User\Desktop\freescale\source\Debug\Obj\hal_aud #
+#                    io.o                                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\User\Desktop\freescale\source\demo_i2s\src\hal\hal_audio.c
+      1          
+      2          
+      3          
+      4          #include "..\\include\\global.h"
+      5          #include "..\\include\\hw_audio_sgtl5000.h"
+      6          #include "..\\include\\hal_dma.h"
+      7          
+      8          #define I2S_BLOCK_N_SAMPLES  64 // each block has N samples
+      9          //#define I2S_BLOCK_N_SAMPLES  8 // each block has N samples
+     10          #define I2S_SAMPLE_N_BYTE 4    // each sample has N bytes
+     11          
+     12          typedef struct 
+     13          {
+     14              byte buf_i2s_r_rx[I2S_BLOCK_N_SAMPLES*I2S_SAMPLE_N_BYTE*2];
+     15              byte buf_i2s_l_rx[I2S_BLOCK_N_SAMPLES*I2S_SAMPLE_N_BYTE*2];
+     16              byte buf_i2s_r_tx[I2S_BLOCK_N_SAMPLES*I2S_SAMPLE_N_BYTE*2];
+     17              byte buf_i2s_l_tx[I2S_BLOCK_N_SAMPLES*I2S_SAMPLE_N_BYTE*2];
+     18          }I2S_BUF;
+     19          
+
+   \                                 In section .bss, align 4
+     20          static I2S_BUF i2s_buf;
+   \                     i2s_buf:
+   \   00000000                      DS8 2048
+     21          
+     22          
+
+   \                                 In section .text, align 2, keep-with-next
+     23          void hal_fill_tx_buf(s32 *p_r, s32 *p_l, uint buf_n_sample)
+     24          {
+   \                     hal_fill_tx_buf:
+   \   00000000   0xB4F0             PUSH     {R4-R7}
+     25              static int index = 0;
+     26              static int data_index = 0;
+     27              int i;
+     28              s32 *p_r_tx;
+     29              s32 *p_l_tx;
+     30              
+     31              if(index == 0)
+   \   00000002   0x....             LDR.N    R6,??DataTable1
+   \   00000004   0x6836             LDR      R6,[R6, #+0]
+   \   00000006   0x2E00             CMP      R6,#+0
+   \   00000008   0xD104             BNE.N    ??hal_fill_tx_buf_0
+     32              {
+     33                  p_r_tx = (int*)i2s_buf.buf_i2s_r_tx;
+   \   0000000A   0x....             LDR.N    R6,??DataTable1_1
+   \   0000000C   0x0034             MOVS     R4,R6
+     34                  p_l_tx = (int*)i2s_buf.buf_i2s_l_tx;
+   \   0000000E   0x....             LDR.N    R6,??DataTable1_2
+   \   00000010   0x0035             MOVS     R5,R6
+   \   00000012   0xE003             B.N      ??hal_fill_tx_buf_1
+     35              }
+     36              else
+     37              {
+     38                  p_r_tx = (int*)(i2s_buf.buf_i2s_r_tx+I2S_BLOCK_N_SAMPLES*I2S_SAMPLE_N_BYTE);
+   \                     ??hal_fill_tx_buf_0:
+   \   00000014   0x....             LDR.N    R6,??DataTable1_3
+   \   00000016   0x0034             MOVS     R4,R6
+     39                  p_l_tx = (int*)(i2s_buf.buf_i2s_l_tx+I2S_BLOCK_N_SAMPLES*I2S_SAMPLE_N_BYTE);
+   \   00000018   0x....             LDR.N    R6,??DataTable1_4
+   \   0000001A   0x0035             MOVS     R5,R6
+     40              }
+     41              
+     42              for(i=0;i<I2S_BLOCK_N_SAMPLES;i++)
+   \                     ??hal_fill_tx_buf_1:
+   \   0000001C   0x2600             MOVS     R6,#+0
+   \   0000001E   0x0033             MOVS     R3,R6
+   \                     ??hal_fill_tx_buf_2:
+   \   00000020   0x2B40             CMP      R3,#+64
+   \   00000022   0xDA19             BGE.N    ??hal_fill_tx_buf_3
+     43              {
+     44                  *p_r_tx++ = p_r[data_index];
+   \   00000024   0x....             LDR.N    R6,??DataTable1_5
+   \   00000026   0x6836             LDR      R6,[R6, #+0]
+   \   00000028   0xF850 0x6026      LDR      R6,[R0, R6, LSL #+2]
+   \   0000002C   0x6026             STR      R6,[R4, #+0]
+   \   0000002E   0x1D24             ADDS     R4,R4,#+4
+     45                  *p_l_tx++ = p_l[data_index];
+   \   00000030   0x....             LDR.N    R6,??DataTable1_5
+   \   00000032   0x6836             LDR      R6,[R6, #+0]
+   \   00000034   0xF851 0x6026      LDR      R6,[R1, R6, LSL #+2]
+   \   00000038   0x602E             STR      R6,[R5, #+0]
+   \   0000003A   0x1D2D             ADDS     R5,R5,#+4
+     46          
+     47                  data_index++;
+   \   0000003C   0x....             LDR.N    R6,??DataTable1_5
+   \   0000003E   0x6836             LDR      R6,[R6, #+0]
+   \   00000040   0x1C76             ADDS     R6,R6,#+1
+   \   00000042   0x....             LDR.N    R7,??DataTable1_5
+   \   00000044   0x603E             STR      R6,[R7, #+0]
+     48          
+     49                  if(data_index >= buf_n_sample)
+   \   00000046   0x....             LDR.N    R6,??DataTable1_5
+   \   00000048   0x6836             LDR      R6,[R6, #+0]
+   \   0000004A   0x4296             CMP      R6,R2
+   \   0000004C   0xD302             BCC.N    ??hal_fill_tx_buf_4
+     50                      data_index = 0;
+   \   0000004E   0x....             LDR.N    R6,??DataTable1_5
+   \   00000050   0x2700             MOVS     R7,#+0
+   \   00000052   0x6037             STR      R7,[R6, #+0]
+     51              }
+   \                     ??hal_fill_tx_buf_4:
+   \   00000054   0x1C5B             ADDS     R3,R3,#+1
+   \   00000056   0xE7E3             B.N      ??hal_fill_tx_buf_2
+     52          
+     53              index ^= 1;
+   \                     ??hal_fill_tx_buf_3:
+   \   00000058   0x....             LDR.N    R6,??DataTable1
+   \   0000005A   0x6836             LDR      R6,[R6, #+0]
+   \   0000005C   0xF096 0x0601      EORS     R6,R6,#0x1
+   \   00000060   0x....             LDR.N    R7,??DataTable1
+   \   00000062   0x603E             STR      R6,[R7, #+0]
+     54          }
+   \   00000064   0xBCF0             POP      {R4-R7}
+   \   00000066   0x4770             BX       LR               ;; return
+
+   \                                 In section .bss, align 4
+   \                     ??index:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+   \                     ??data_index:
+   \   00000000                      DS8 4
+     55          
+
+   \                                 In section .text, align 2, keep-with-next
+     56          void hal_audio_init(void)
+     57          {
+   \                     hal_audio_init:
+   \   00000000   0xB580             PUSH     {R7,LR}
+     58              hw_audio_sgtl5000_init();
+   \   00000002   0x.... 0x....      BL       hw_audio_sgtl5000_init
+     59              hw_audio_sgtl5000_test_reg();
+   \   00000006   0x.... 0x....      BL       hw_audio_sgtl5000_test_reg
+     60              hal_dma_init_for_i2s((uint)(i2s_buf.buf_i2s_r_rx), (uint)(i2s_buf.buf_i2s_r_tx), I2S_BLOCK_N_SAMPLES, I2S_SAMPLE_N_BYTE);    
+   \   0000000A   0x2304             MOVS     R3,#+4
+   \   0000000C   0x2240             MOVS     R2,#+64
+   \   0000000E   0x....             LDR.N    R1,??DataTable1_1
+   \   00000010   0x....             LDR.N    R0,??DataTable1_6
+   \   00000012   0x.... 0x....      BL       hal_dma_init_for_i2s
+     61          }
+   \   00000016   0xBD01             POP      {R0,PC}          ;; return
+     62          
+
+   \                                 In section .text, align 2, keep-with-next
+     63          void hal_audio_play(s32 *sin_table, s32 *sin_table2, uint buf_size)
+     64          {
+     65              while(1)
+   \                     hal_audio_play:
+   \                     ??hal_audio_play_0:
+   \   00000000   0xE7FE             B.N      ??hal_audio_play_0
+     66              {
+     67                  ;
+     68              }
+     69          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   0x........         DC32     ??index
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_1:
+   \   00000000   0x........         DC32     i2s_buf+0x400
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_2:
+   \   00000000   0x........         DC32     i2s_buf+0x600
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_3:
+   \   00000000   0x........         DC32     i2s_buf+0x500
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_4:
+   \   00000000   0x........         DC32     i2s_buf+0x700
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_5:
+   \   00000000   0x........         DC32     ??data_index
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1_6:
+   \   00000000   0x........         DC32     i2s_buf
+     70          
+     71          
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   hal_audio_init
+         8   -> hal_dma_init_for_i2s
+         8   -> hw_audio_sgtl5000_init
+         8   -> hw_audio_sgtl5000_test_reg
+       0   hal_audio_play
+      16   hal_fill_tx_buf
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable1
+       4  ??DataTable1_1
+       4  ??DataTable1_2
+       4  ??DataTable1_3
+       4  ??DataTable1_4
+       4  ??DataTable1_5
+       4  ??DataTable1_6
+       4  data_index
+      24  hal_audio_init
+       2  hal_audio_play
+     104  hal_fill_tx_buf
+    2048  i2s_buf
+       4  index
+
+ 
+ 2 056 bytes in section .bss
+   158 bytes in section .text
+ 
+   158 bytes of CODE memory
+ 2 056 bytes of DATA memory
+
+Errors: none
+Warnings: none

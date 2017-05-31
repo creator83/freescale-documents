@@ -1,0 +1,490 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V6.10.1.52143/W32 for ARM     15/Feb/2011  12:14:21 #
+# Copyright 1999-2010 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS5 #
+#                    12_SC\kinetis-sc\src\projects\gpio\gpio_k40.c            #
+#    Command line =  "D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS #
+#                    512_SC\kinetis-sc\src\projects\gpio\gpio_k40.c" -D IAR   #
+#                    -D TWR_K40X256 -lCN "D:\Profiles\B17685\My               #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\RAM_128KB\List\" -lB "D:\Profiles\B17685\My    #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\RAM_128KB\List\" -o "D:\Profiles\B17685\My     #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\RAM_128KB\Obj\" --no_cse --no_unroll           #
+#                    --no_inline --no_code_motion --no_tbaa --no_clustering   #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M4  #
+#                    -e --fpu=None --dlib_config "C:\Program Files\IAR        #
+#                    Systems\Embedded Workbench 6.0_2\arm\INC\c\DLib_Config_N #
+#                    ormal.h" -I "D:\Profiles\B17685\My                       #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\..\..\..\src\projects\gpio\" -I                #
+#                    "D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS #
+#                    512_SC\kinetis-sc\build\iar\gpio\..\..\..\src\common\"   #
+#                    -I "D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINE #
+#                    TIS512_SC\kinetis-sc\build\iar\gpio\..\..\..\src\cpu\"   #
+#                    -I "D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINE #
+#                    TIS512_SC\kinetis-sc\build\iar\gpio\..\..\..\src\cpu\hea #
+#                    ders\" -I "D:\Profiles\B17685\My                         #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\..\..\..\src\drivers\uart\" -I                 #
+#                    "D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS #
+#                    512_SC\kinetis-sc\build\iar\gpio\..\..\..\src\drivers\mc #
+#                    g\" -I "D:\Profiles\B17685\My                            #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\..\..\..\src\drivers\wdog\" -I                 #
+#                    "D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS #
+#                    512_SC\kinetis-sc\build\iar\gpio\..\..\..\src\platforms\ #
+#                    " -I "D:\Profiles\B17685\My                              #
+#                    Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\build #
+#                    \iar\gpio\..\" -Ol --use_c++_inline                      #
+#    List file    =  D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS5 #
+#                    12_SC\kinetis-sc\build\iar\gpio\RAM_128KB\List\gpio_k40. #
+#                    lst                                                      #
+#    Object file  =  D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS5 #
+#                    12_SC\kinetis-sc\build\iar\gpio\RAM_128KB\Obj\gpio_k40.o #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\Profiles\B17685\My Documents\FAE\MCU\Kinetis\KINETIS512_SC\kinetis-sc\src\projects\gpio\gpio_k40.c
+      1          /*
+      2           * File:		gpio_k40.c
+      3           * Purpose:		LED and Switch Example
+      4           *
+      5           *                      Configures GPIO for the LED and push buttons on the TWR-K40X256
+      6           *                      Blue LED - On
+      7           *                      Green LED - Toggles on/off
+      8           *                      Orange LED - On if SW7 pressed
+      9           *                      Yellow LED - On if SW6 pressed
+     10           *
+     11           *                      Also configures push buttons for falling IRQ's. ISR
+     12           *                        configured in vector table in isr.h
+     13           */
+     14          
+     15          #define GPIO_PIN_MASK            0x1Fu
+     16          #define GPIO_PIN(x)              (((1)<<(x & GPIO_PIN_MASK)))
+     17          
+     18          #include "common.h"
+     19          
+     20          //Function declarations
+     21          void init_gpio(void);
+     22          void delay(void);
+     23          
+     24          /********************************************************************/
+     25          
+
+   \                                 In section .text, align 2, keep-with-next
+     26          void main (void)
+     27          {
+   \                     main:
+   \   00000000   80B5               PUSH     {R7,LR}
+     28            printf("TWR-K40X256 GPIO Example!\n");
+   \   00000002   ........           ADR.W    R0,`?<Constant "TWR-K40X256 GPIO Exam...">`
+   \   00000006   ........           BL       printf
+     29          
+     30            /* Turn on all port clocks */
+     31            SIM_SCGC5 = SIM_SCGC5_PORTA_MASK | SIM_SCGC5_PORTB_MASK | SIM_SCGC5_PORTC_MASK | SIM_SCGC5_PORTD_MASK | SIM_SCGC5_PORTE_MASK;
+   \   0000000A   ....               LDR.N    R0,??DataTable7  ;; 0x40048038
+   \   0000000C   4FF47851           MOV      R1,#+15872
+   \   00000010   0160               STR      R1,[R0, #+0]
+     32          
+     33            /* Enable GPIOC interrupts in NVIC */
+     34            enable_irq(89); //GPIOC Vector is 105. IRQ# is 105-16=89
+   \   00000012   5920               MOVS     R0,#+89
+   \   00000014   ........           BL       enable_irq
+     35          
+     36            /* Initialize GPIO on TWR-K40X256 */
+     37            init_gpio();
+   \   00000018   ........           BL       init_gpio
+   \   0000001C   07E0               B.N      ??main_0
+     38          
+     39            while(1)
+     40            {
+     41              //Set PTB11 to 0 (turns on blue LED)
+     42              GPIOB_PDOR&=~GPIO_PDOR_PDO(GPIO_PIN(11));
+     43          
+     44              //Toggle the green LED on PTC9
+     45              GPIOC_PTOR|=GPIO_PDOR_PDO(GPIO_PIN(9));
+     46          
+     47              //Look at status of SW6 on PTC5
+     48              if((GPIOC_PDIR & GPIO_PDIR_PDI(GPIO_PIN(5)))==0) //if pressed...
+     49              {
+     50                GPIOC_PDOR&=~GPIO_PDOR_PDO(GPIO_PIN(8)); //Set PTC8 to 0 (turns on yellow LED)
+     51              }
+     52              else  //else if not pressed...
+     53              {
+     54                GPIOC_PDOR|=GPIO_PDOR_PDO(GPIO_PIN(8)); //Set PTC8 to 1 (turns off yellow LED)
+     55              }
+     56          
+     57              //Look at status of SW7 on PTC13
+     58              if((GPIOC_PDIR & GPIO_PDIR_PDI(GPIO_PIN(13))) == 0)  //If pressed...
+     59              {
+     60                GPIOC_PDOR&=~GPIO_PDOR_PDO(GPIO_PIN(7)); //Set PTC7 to 0 (turns on orange LED)
+     61              }
+     62              else //else if not pressed...
+     63              {
+     64                GPIOC_PDOR|=GPIO_PDOR_PDO(GPIO_PIN(7)); //Set PTC7 to 1 (turns off orange LED)
+   \                     ??main_1:
+   \   0000001E   ....               LDR.N    R0,??DataTable7_1  ;; 0x400ff080
+   \   00000020   0068               LDR      R0,[R0, #+0]
+   \   00000022   50F08000           ORRS     R0,R0,#0x80
+   \   00000026   ....               LDR.N    R1,??DataTable7_1  ;; 0x400ff080
+   \   00000028   0860               STR      R0,[R1, #+0]
+     65              }
+     66          
+     67              delay();
+   \                     ??main_2:
+   \   0000002A   ........           BL       delay
+   \                     ??main_0:
+   \   0000002E   ....               LDR.N    R0,??DataTable7_2  ;; 0x400ff040
+   \   00000030   0068               LDR      R0,[R0, #+0]
+   \   00000032   30F40060           BICS     R0,R0,#0x800
+   \   00000036   ....               LDR.N    R1,??DataTable7_2  ;; 0x400ff040
+   \   00000038   0860               STR      R0,[R1, #+0]
+   \   0000003A   ....               LDR.N    R0,??DataTable7_3  ;; 0x400ff08c
+   \   0000003C   0068               LDR      R0,[R0, #+0]
+   \   0000003E   4FF40071           MOV      R1,#+512
+   \   00000042   0843               ORRS     R0,R1,R0
+   \   00000044   ....               LDR.N    R1,??DataTable7_3  ;; 0x400ff08c
+   \   00000046   0860               STR      R0,[R1, #+0]
+   \   00000048   ....               LDR.N    R0,??DataTable7_4  ;; 0x400ff090
+   \   0000004A   0068               LDR      R0,[R0, #+0]
+   \   0000004C   8006               LSLS     R0,R0,#+26
+   \   0000004E   06D4               BMI.N    ??main_3
+   \   00000050   ....               LDR.N    R0,??DataTable7_1  ;; 0x400ff080
+   \   00000052   0068               LDR      R0,[R0, #+0]
+   \   00000054   30F48070           BICS     R0,R0,#0x100
+   \   00000058   ....               LDR.N    R1,??DataTable7_1  ;; 0x400ff080
+   \   0000005A   0860               STR      R0,[R1, #+0]
+   \   0000005C   06E0               B.N      ??main_4
+   \                     ??main_3:
+   \   0000005E   ....               LDR.N    R0,??DataTable7_1  ;; 0x400ff080
+   \   00000060   0068               LDR      R0,[R0, #+0]
+   \   00000062   4FF48071           MOV      R1,#+256
+   \   00000066   0843               ORRS     R0,R1,R0
+   \   00000068   ....               LDR.N    R1,??DataTable7_1  ;; 0x400ff080
+   \   0000006A   0860               STR      R0,[R1, #+0]
+   \                     ??main_4:
+   \   0000006C   ....               LDR.N    R0,??DataTable7_4  ;; 0x400ff090
+   \   0000006E   0068               LDR      R0,[R0, #+0]
+   \   00000070   8004               LSLS     R0,R0,#+18
+   \   00000072   D4D4               BMI.N    ??main_1
+   \   00000074   ....               LDR.N    R0,??DataTable7_1  ;; 0x400ff080
+   \   00000076   0068               LDR      R0,[R0, #+0]
+   \   00000078   30F08000           BICS     R0,R0,#0x80
+   \   0000007C   ....               LDR.N    R1,??DataTable7_1  ;; 0x400ff080
+   \   0000007E   0860               STR      R0,[R1, #+0]
+   \   00000080   D3E7               B.N      ??main_2
+     68            }
+     69          }
+     70          
+     71          /*
+     72           * Initialize GPIO for Tower switches and LED's
+     73           *
+     74           *   PTC5 - SW6
+     75           *   PTC13 - SW7
+     76           *
+     77           *   PTB11 - Blue LED (D17)
+     78           *   PTC9 - Green LED (D14)
+     79           *   PTC8 - Yellow LED (D15)
+     80           *   PTC7 - Orange LED (D16)
+     81           *
+     82           */
+
+   \                                 In section .text, align 2, keep-with-next
+     83          void init_gpio()
+     84          {
+     85            //Set PTC5 and PTC13 (connected to SW6 and SW7) for GPIO functionality, falling IRQ,
+     86            //   and to use internal pull-ups. (pin defaults to input state)
+     87            PORTC_PCR5=(0|PORT_PCR_MUX(1)|PORT_PCR_IRQC(0xA)|PORT_PCR_PE_MASK|PORT_PCR_PS_MASK);
+   \                     init_gpio:
+   \   00000000   ....               LDR.N    R0,??DataTable7_5  ;; 0x4004b014
+   \   00000002   ....               LDR.N    R1,??DataTable7_6  ;; 0xa0103
+   \   00000004   0160               STR      R1,[R0, #+0]
+     88            PORTC_PCR13=(0|PORT_PCR_MUX(1)|PORT_PCR_IRQC(0xA)|PORT_PCR_PE_MASK|PORT_PCR_PS_MASK);
+   \   00000006   ....               LDR.N    R0,??DataTable7_7  ;; 0x4004b034
+   \   00000008   ....               LDR.N    R1,??DataTable7_6  ;; 0xa0103
+   \   0000000A   0160               STR      R1,[R0, #+0]
+     89          
+     90            //Set PTB11, PTC7, PTC8, and PTC9 (connected to LED's) for GPIO functionality
+     91            PORTB_PCR11=(0|PORT_PCR_MUX(1));
+   \   0000000C   ....               LDR.N    R0,??DataTable7_8  ;; 0x4004a02c
+   \   0000000E   4FF48071           MOV      R1,#+256
+   \   00000012   0160               STR      R1,[R0, #+0]
+     92            PORTC_PCR7=(0|PORT_PCR_MUX(1));
+   \   00000014   ....               LDR.N    R0,??DataTable7_9  ;; 0x4004b01c
+   \   00000016   4FF48071           MOV      R1,#+256
+   \   0000001A   0160               STR      R1,[R0, #+0]
+     93            PORTC_PCR8=(0|PORT_PCR_MUX(1));
+   \   0000001C   ....               LDR.N    R0,??DataTable7_10  ;; 0x4004b020
+   \   0000001E   4FF48071           MOV      R1,#+256
+   \   00000022   0160               STR      R1,[R0, #+0]
+     94            PORTC_PCR9=(0|PORT_PCR_MUX(1));
+   \   00000024   ....               LDR.N    R0,??DataTable7_11  ;; 0x4004b024
+   \   00000026   4FF48071           MOV      R1,#+256
+   \   0000002A   0160               STR      R1,[R0, #+0]
+     95          
+     96            //Change PTB11, PTC7, PTC8, PTC9 to outputs
+     97            GPIOB_PDDR=GPIO_PDDR_PDD(GPIO_PIN(11));
+   \   0000002C   ....               LDR.N    R0,??DataTable7_12  ;; 0x400ff054
+   \   0000002E   4FF40061           MOV      R1,#+2048
+   \   00000032   0160               STR      R1,[R0, #+0]
+     98            GPIOC_PDDR=GPIO_PDDR_PDD(GPIO_PIN(7) | GPIO_PIN(8) | GPIO_PIN(9));	
+   \   00000034   ....               LDR.N    R0,??DataTable7_13  ;; 0x400ff094
+   \   00000036   4FF46071           MOV      R1,#+896
+   \   0000003A   0160               STR      R1,[R0, #+0]
+     99          }
+   \   0000003C   7047               BX       LR               ;; return
+    100          /********************************************************************/
+    101          
+    102          /*
+    103           * ISR for PORTC interrupts
+    104           */
+
+   \                                 In section .text, align 2, keep-with-next
+    105          void portc_isr(void)
+    106          {
+   \                     portc_isr:
+   \   00000000   80B5               PUSH     {R7,LR}
+    107            if(PORTC_ISFR & PORT_ISFR_ISF(GPIO_PIN(5)))
+   \   00000002   ....               LDR.N    R0,??DataTable7_14  ;; 0x4004b0a0
+   \   00000004   0068               LDR      R0,[R0, #+0]
+   \   00000006   8006               LSLS     R0,R0,#+26
+   \   00000008   03D5               BPL.N    ??portc_isr_0
+    108            {
+    109               printf("SW6 Pressed\n");
+   \   0000000A   ........           ADR.W    R0,`?<Constant "SW6 Pressed\\n">`
+   \   0000000E   ........           BL       printf
+    110            }
+    111            if(PORTC_ISFR & PORT_ISFR_ISF(GPIO_PIN(13)))
+   \                     ??portc_isr_0:
+   \   00000012   ....               LDR.N    R0,??DataTable7_14  ;; 0x4004b0a0
+   \   00000014   0068               LDR      R0,[R0, #+0]
+   \   00000016   8004               LSLS     R0,R0,#+18
+   \   00000018   03D5               BPL.N    ??portc_isr_1
+    112            {
+    113               printf("SW7 Pressed\n");
+   \   0000001A   ........           ADR.W    R0,`?<Constant "SW7 Pressed\\n">`
+   \   0000001E   ........           BL       printf
+    114            }
+    115            PORTC_ISFR=0xFFFFFFFF;  //Clear Port C ISR flags
+   \                     ??portc_isr_1:
+   \   00000022   ....               LDR.N    R0,??DataTable7_14  ;; 0x4004b0a0
+   \   00000024   5FF0FF31           MOVS     R1,#-1
+   \   00000028   0160               STR      R1,[R0, #+0]
+    116          }
+   \   0000002A   01BD               POP      {R0,PC}          ;; return
+    117          
+    118          /*
+    119           * ISR for PORTE interrupts
+    120           */
+
+   \                                 In section .text, align 2, keep-with-next
+    121          void porte_isr(void)
+    122          {
+    123            PORTE_ISFR=0xFFFFFFFF;  //Clear Port E ISR flags
+   \                     porte_isr:
+   \   00000000   ....               LDR.N    R0,??DataTable7_15  ;; 0x4004d0a0
+   \   00000002   5FF0FF31           MOVS     R1,#-1
+   \   00000006   0160               STR      R1,[R0, #+0]
+    124          }
+   \   00000008   7047               BX       LR               ;; return
+    125          
+    126          /*
+    127           * ISR for PORTA interrupts
+    128           */
+
+   \                                 In section .text, align 2, keep-with-next
+    129          void porta_isr(void)
+    130          {
+    131            PORTA_ISFR=0xFFFFFFFF;  //Clear Port A ISR flags
+   \                     porta_isr:
+   \   00000000   ....               LDR.N    R0,??DataTable7_16  ;; 0x400490a0
+   \   00000002   5FF0FF31           MOVS     R1,#-1
+   \   00000006   0160               STR      R1,[R0, #+0]
+    132          }
+   \   00000008   7047               BX       LR               ;; return
+    133          
+    134          
+    135          /*
+    136           * Function to provide a short delay
+    137           */
+
+   \                                 In section .text, align 4, keep-with-next
+    138          void delay()
+    139          {
+    140            unsigned int i, n;
+    141            for(i=0;i<30000;i++)
+   \                     delay:
+   \   00000000   0020               MOVS     R0,#+0
+   \   00000002   04E0               B.N      ??delay_0
+    142            {
+    143              for(n=0;n<200;n++)
+    144              {
+    145                asm("nop");
+   \                     ??delay_1:
+   \   00000004   00BF               nop              
+    146              }
+   \   00000006   491C               ADDS     R1,R1,#+1
+   \                     ??delay_2:
+   \   00000008   C829               CMP      R1,#+200
+   \   0000000A   FBD3               BCC.N    ??delay_1
+   \   0000000C   401C               ADDS     R0,R0,#+1
+   \                     ??delay_0:
+   \   0000000E   47F23051           MOVW     R1,#+30000
+   \   00000012   8842               CMP      R0,R1
+   \   00000014   01D2               BCS.N    ??delay_3
+   \   00000016   0021               MOVS     R1,#+0
+   \   00000018   F6E7               B.N      ??delay_2
+    147            }
+    148          }
+   \                     ??delay_3:
+   \   0000001A   7047               BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7:
+   \   00000000   38800440           DC32     0x40048038
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_1:
+   \   00000000   80F00F40           DC32     0x400ff080
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_2:
+   \   00000000   40F00F40           DC32     0x400ff040
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_3:
+   \   00000000   8CF00F40           DC32     0x400ff08c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_4:
+   \   00000000   90F00F40           DC32     0x400ff090
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_5:
+   \   00000000   14B00440           DC32     0x4004b014
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_6:
+   \   00000000   03010A00           DC32     0xa0103
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_7:
+   \   00000000   34B00440           DC32     0x4004b034
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_8:
+   \   00000000   2CA00440           DC32     0x4004a02c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_9:
+   \   00000000   1CB00440           DC32     0x4004b01c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_10:
+   \   00000000   20B00440           DC32     0x4004b020
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_11:
+   \   00000000   24B00440           DC32     0x4004b024
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_12:
+   \   00000000   54F00F40           DC32     0x400ff054
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_13:
+   \   00000000   94F00F40           DC32     0x400ff094
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_14:
+   \   00000000   A0B00440           DC32     0x4004b0a0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_15:
+   \   00000000   A0D00440           DC32     0x4004d0a0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable7_16:
+   \   00000000   A0900440           DC32     0x400490a0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "TWR-K40X256 GPIO Exam...">`:
+   \   00000000                      ; Initializer data, 28 bytes
+   \   00000000   5457522D4B34       DC8 84, 87, 82, 45, 75, 52, 48, 88, 50, 53
+   \              30583235    
+   \   0000000A   36204750494F       DC8 54, 32, 71, 80, 73, 79, 32, 69, 120, 97
+   \              20457861    
+   \   00000014   6D706C65210A       DC8 109, 112, 108, 101, 33, 10, 0, 0
+   \              0000        
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "SW6 Pressed\\n">`:
+   \   00000000                      ; Initializer data, 16 bytes
+   \   00000000   535736205072       DC8 83, 87, 54, 32, 80, 114, 101, 115, 115, 101
+   \              65737365    
+   \   0000000A   640A00000000       DC8 100, 10, 0, 0, 0, 0
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     `?<Constant "SW7 Pressed\\n">`:
+   \   00000000                      ; Initializer data, 16 bytes
+   \   00000000   535737205072       DC8 83, 87, 55, 32, 80, 114, 101, 115, 115, 101
+   \              65737365    
+   \   0000000A   640A00000000       DC8 100, 10, 0, 0, 0, 0
+
+   Maximum stack usage in bytes:
+
+     Function  .cstack
+     --------  -------
+     delay          0
+     init_gpio      0
+     main           8
+     porta_isr      0
+     portc_isr      8
+     porte_isr      0
+
+
+   Section sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     main                                    130
+     init_gpio                                62
+     portc_isr                                44
+     porte_isr                                10
+     porta_isr                                10
+     delay                                    28
+     ??DataTable7                              4
+     ??DataTable7_1                            4
+     ??DataTable7_2                            4
+     ??DataTable7_3                            4
+     ??DataTable7_4                            4
+     ??DataTable7_5                            4
+     ??DataTable7_6                            4
+     ??DataTable7_7                            4
+     ??DataTable7_8                            4
+     ??DataTable7_9                            4
+     ??DataTable7_10                           4
+     ??DataTable7_11                           4
+     ??DataTable7_12                           4
+     ??DataTable7_13                           4
+     ??DataTable7_14                           4
+     ??DataTable7_15                           4
+     ??DataTable7_16                           4
+     ?<Constant "TWR-K40X256 GPIO Exam...">   28
+     ?<Constant "SW6 Pressed\n">              16
+     ?<Constant "SW7 Pressed\n">              16
+
+ 
+ 412 bytes in section .text
+ 
+ 412 bytes of CODE memory
+
+Errors: none
+Warnings: none
