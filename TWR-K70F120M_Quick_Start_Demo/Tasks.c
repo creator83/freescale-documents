@@ -1,0 +1,56 @@
+/**HEADER********************************************************************
+*
+* Copyright (c) 2010 Freescale Semiconductor;
+* All Rights Reserved
+*
+*
+***************************************************************************
+*
+* THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY EXPRESSED OR
+* IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+* IN NO EVENT SHALL FREESCALE OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+* INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+* (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+* STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+* IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+* THE POSSIBILITY OF SUCH DAMAGE.
+*
+**************************************************************************
+*
+* $FileName: Tasks.c$
+* $Version : 0.3$
+* $Date    : Dec-15-2010$
+*
+* Comments:
+*
+*
+*
+*END************************************************************************/
+
+#include "demo.h"
+
+/*
+ * MQX initialization information
+ */
+
+const TASK_TEMPLATE_STRUCT MQX_template_list[] =
+{
+  /* Task Index,   Function,         Stack,  Priority, Name,      Attributes,             Param,  Time Slice */
+  { INIT_TASK,     Init_Task,        2000,     13,      "Init", MQX_AUTO_START_TASK, 0, 0 },
+
+  { ADC_TASK,      ADC_Task,         1000,     12,      "ADC",  0,    0,      0           },
+  { ACCEL_TASK,    Accel_Task,       1000,     12,      "Accelerometer",  0,    0,      0           },
+  { GAME_TASK,     Game_Task,        1000,     12,      "Game",  0,    0,      0           },
+  { DEMO_TASK,     Demo_Task,        1000,     13,      "Demo",  0,    0,      0           },
+
+  { SDCARD_TASK,   sdcard_task,      2500,    11,      "SDcard", 0, 0,     0 },
+  { SHELL_TASK,    shell_task,       2500,    14,      "Shell",  0, 0,     0 },
+
+  { USB_TASK,      usb_task,         1000,     9,      "USB",  0, 0,     0 },
+  {0}
+};
+
+/* EOF */
